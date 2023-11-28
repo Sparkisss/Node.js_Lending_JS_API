@@ -1,8 +1,75 @@
-
+body {
+    background-color: #eaeaea;
+    height: 100%;
+}
 .container {
     width: 1120px;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
+
 .header {
+    margin-bottom: 85px;
+}
+//Header
+.header__wrapper {
+    background-color: #f8f8f8;
+    height: 123px;
+    margin: 55px 0;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    align-items: center; 
+
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
+
+.logo,
+.forma {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    li {        
+        display: grid;
+        justify-content: center;
+    }
+}
+// Main
+.main__wrapper {
+    height: 438px;
+    background-color: #f8f8f8;
+    background-image: url('/src/img/rectangle_1_4673.png');
+    background-position: center;
+    background-size: 110%;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "logo"
+        "title"
+        "text"
+        "button";
+}
+
+.main__logo {
+    grid-area: logo;
+}
+.main__title {
+    grid-area: title;
+}
+.main__text {
+    grid-area: text;
+}
+.main__button {
+    grid-area: button;
 }
