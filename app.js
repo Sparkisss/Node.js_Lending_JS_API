@@ -9,7 +9,6 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server);
 
-
 app.get('/', (req, res) => {  
   app.use(express.static(__dirname + '/dist'));
   res.sendFile(join(__dirname, 'dist', 'index.html'));
