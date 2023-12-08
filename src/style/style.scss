@@ -1,5 +1,7 @@
 body {
     background-color: #eaeaea;
+    transform: scale(.87);    
+    animation: mask 2s forwards;
 }
 .container {
     width: 1120px;
@@ -60,7 +62,7 @@ body {
 .main__wrapper {
     height: 438px;
     background-color: #f8f8f8;
-    background-image: url('/src/img/photoOfObject/part_five.png');
+    background-image: url('/src/img/photoOfObject/part_1.png');
     border-radius: 8px;
     background-position: center;
     background-size: 101%;
@@ -72,10 +74,31 @@ body {
     justify-content: center;
 }
 
+@keyframes mask {
+    100% {
+        transform: scale(1);
+    }
+}
+
+.one {
+    background-image: url('/src/img/photoOfObject/part_1.png');
+}
+.two {
+    background-image: url('/src/img/photoOfObject/part_2.png');
+}
+.three {
+    background-image: url('/src/img/photoOfObject/part_3.png');
+}
+.four {
+    background-image: url('/src/img/photoOfObject/part_4.png');
+}
+.five {
+    background-image: url('/src/img/photoOfObject/part_5.png');
+}
+
 .main__logo,
 .main__title,
-.main__text,
-.main__button {
+.main__text {
     width: 40%;
     margin-bottom: 35px; 
     
@@ -100,7 +123,8 @@ body {
     display: grid;
     justify-content: center;
     align-items: center; 
-    cursor: pointer;   
+    cursor: pointer;
+    margin-bottom: 15px;   
 
     font-family: 'Josefin Sans';
     font-size: 12px;
@@ -111,6 +135,10 @@ body {
         border-radius: 7px;
         box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
     }  
+}
+#prev,
+#next {
+    cursor: pointer;
 }
 //footer
 footer {
