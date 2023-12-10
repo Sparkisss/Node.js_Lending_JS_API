@@ -107,9 +107,13 @@ function infoOfObject (index) {
                 ).render();
             break;
         case 3: 
-            new ObjectInormation('Minsk', 'Pritickogo', 91, "It is text for test my try", 
-            ".main__slide"
-            ).render();
+            new ObjectInormation(
+                'Minsk',
+                'Pritickogo',
+                91, 
+                "It is text for test my try", 
+                ".main__slide"
+                ).render();
             break;
         case 4: 
             new ObjectInormation(

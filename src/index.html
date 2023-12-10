@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    
+    <meta name="viewport" content="width=device-width">    
     <link rel="icon" href="/src/img/link/link.png" type="image/svg+xml">
     <link rel="icon" href="/src/img/link/link.png" type="image/png">
-
     <title>Document</title>
 </head>
-
 <body>
     <div class="wrapper">
         <div class="container">
@@ -20,14 +17,14 @@
                     </div>
                     <div class="menu">
                         <ul>
-                            <li id="temperature">Home</li>
-                            <li id="humidity">Objects</li>
-                            <li id="counter">Login</li>
-                            <li id="sum">Contacts</li>
+                            <li><a href="">Home</a></li>
+                            <li data-popupObject>Objects</li>
+                            <li data-popupForm>Login</li>
+                            <li data-popupContacts>Contacts</li>
                         </ul>
                     </div>
                     <div class="forma">
-                        <input id="temperature" required placeholder="FIND A OBJECT" name="temperature" type="text">
+                        <input id="object" required placeholder="FIND A OBJECT" name="object" type="text">
                     </div>
                 </div>                
             </header>
@@ -43,11 +40,13 @@
                             <div class="main__button">
                                 <a href="#">GET ACCESS</a>                            
                             </div>
-                            <img id="prev" src="/src/img/prev.png" alt="">
-                            <img id="next" src="/src/img/next.png" alt="">
+
                         </div>                      
                     </div>
                 </div>
+
+                <img id="prev" src="/src/img/prev.png" alt="">
+                <img id="next" src="/src/img/next.png" alt="">
             </main>
             <footer class="footer">
                 <div class="menu__wrapper footer">
@@ -56,10 +55,10 @@
                     </div>
                     <div class="menu">
                         <ul id="test">
-                            <li id="temperature">Home</li>
-                            <li id="humidity">Objects</li>
-                            <li id="counter">Login</li>
-                            <li id="test">Contacts</li>
+                            <li>Home</li>
+                            <li data-popupObject>Objects</li>
+                            <li data-popupForm>Login</li>
+                            <li data-popupContacts>Contacts</li>
                         </ul>
                     </div>
                     <div class="info">
@@ -70,6 +69,16 @@
                     </div>
                 </div>
             </footer>
+            
+            <div id="popupObject" class="popupObject">
+                <div class="popupObject__body">
+                    <div class="popupObject__content">
+                        <a href="" data-close class="popupObject__clouse">&#10006</a>                        
+                        <div class="list"></div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </body>
