@@ -2,7 +2,8 @@ const prev = document.getElementById('prev'),
       next = document.getElementById('next'),
       renderElementOne = document.querySelector(".main__title"),
       renderElementTwo = document.querySelector(".main__text"),      
-      slidesWrapper = document.querySelector('.main__wrapper');
+      slidesWrapper = document.querySelector('.main__wrapper'),
+      adressOfPage = document.querySelector('.main__button a');
 let slideIndex = 1;
 
 class ObjectInormation {
@@ -86,7 +87,6 @@ function slider () {
 }
 
 function infoOfObject (index) {
-    console.log("Index" + index);
     switch(index) {        
         case 1: 
             new ObjectInormation(
@@ -96,6 +96,7 @@ function infoOfObject (index) {
                 "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
                 ".main__slide"
                 ).render();
+                adressOfPage.setAttribute('href', './page1.html');
             break;
         case 2: 
             new ObjectInormation(
@@ -105,6 +106,7 @@ function infoOfObject (index) {
                 "Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
                 ".main__slide"
                 ).render();
+                adressOfPage.setAttribute('href', './page2.html');
             break;
         case 3: 
             new ObjectInormation(
@@ -114,6 +116,7 @@ function infoOfObject (index) {
                 "It is text for test my try", 
                 ".main__slide"
                 ).render();
+                adressOfPage.setAttribute('href', './page3.html');
             break;
         case 4: 
             new ObjectInormation(
@@ -123,6 +126,7 @@ function infoOfObject (index) {
                 "I hope I can make it's right",
                 ".main__slide"
                 ).render();
+                adressOfPage.setAttribute('href', './page4.html');
             break;
         case 5: 
             new ObjectInormation(
@@ -131,7 +135,8 @@ function infoOfObject (index) {
                 1,
                 "It is very important for me and my future",
                 ".main__slide"
-                ).render();            
+                ).render();
+                adressOfPage.setAttribute('href', './page5.html');            
             break;
     }
 }

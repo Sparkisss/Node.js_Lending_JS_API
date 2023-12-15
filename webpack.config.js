@@ -17,7 +17,14 @@ module.exports = {
     open: true,
     hot: true,
   },
-  entry: path.resolve(__dirname, 'src', 'index.js'),
+  entry: {
+    index: './src/index.js',
+    page1: './src/test.js',
+    page2: './src/test.js',
+    page3: './src/test.js',
+    page4: './src/test.js',
+    page5: './src/test.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
@@ -26,7 +33,34 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: "index.html",
       template: path.resolve(__dirname, 'src', 'index.html'),
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page1.html",
+      template: path.resolve(__dirname, 'src/pages', 'page1.html'),
+      chunks: ['page1']
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page2.html",
+      template: path.resolve(__dirname, 'src/pages', 'page2.html'),
+      chunks: ['page2']
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page3.html",
+      template: path.resolve(__dirname, 'src/pages', 'page3.html'),
+      chunks: ['page3']
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page4.html",
+      template: path.resolve(__dirname, 'src/pages', 'page4.html'),
+      chunks: ['page4']
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page5.html",
+      template: path.resolve(__dirname, 'src/pages', 'page5.html'),
+      chunks: ['page5']
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
