@@ -26,14 +26,14 @@ prev.addEventListener('click', (e) => {
     slideIndex--;
     if (slideIndex <= 0) slideIndex = 5;
     infoOfObject (slideIndex);
-    slider();    
+    slider();  
 });
 
 next.addEventListener('click', (e) => {
     slideIndex++;
     if (slideIndex > 5) slideIndex = 1;
     infoOfObject (slideIndex);
-    slider();    
+    slider();       
 });
 
 function init () {
@@ -46,8 +46,7 @@ function init () {
         ).render();
 }
 
-function slider () {
-    console.log(slideIndex);    
+function slider () {         
         if (slideIndex === 1) {            
             slidesWrapper.classList.add('one');
             slidesWrapper.classList.remove('two');
@@ -82,9 +81,10 @@ function slider () {
             slidesWrapper.classList.remove('three');
             slidesWrapper.classList.remove('four');
             slidesWrapper.classList.add('five');
-        }     
+        }             
     return slideIndex;
 }
+
 
 function infoOfObject (index) {
     switch(index) {        
@@ -140,3 +140,4 @@ function infoOfObject (index) {
             break;
     }
 }
+
