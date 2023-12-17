@@ -4,7 +4,8 @@ import "@babel/polyfill";
 import "./modules/slider";
 import "./modules/modal";
 
-window.addEventListener('DOMContentLoaded', () => {  
-   
+window.addEventListener('DOMContentLoaded', () => {   
+
+
 });
 

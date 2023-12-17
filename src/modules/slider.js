@@ -6,6 +6,31 @@ const prev = document.getElementById('prev'),
       adressOfPage = document.querySelector('.main__button a');
 let slideIndex = 1;
 
+// input
+const inputArea = document.querySelector('.search'),
+      searchInput = document.querySelector('#object');
+
+    inputArea.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        Object.entries(listOfObject).forEach(([key, value]) => {
+            if (value === searchInput.value) {
+            infoOfObject (+key);
+            }
+        })
+        searchInput.value = "";
+    })
+
+    const listOfObject = {
+        1: 'City: Brest. Street: Kirova-122.',
+        2: 'City: Kobrin. Street: Druschba-54.',
+        3: 'City: Minsk. Street: Pritickogo-91.',
+        4: 'City: Baranovichi. Street: Kolosa-6.',
+        5: 'City: Brest. Street: Sikorskogo-1.',
+    }
+
+// input
+
 class ObjectInormation {
     constructor(city, street, number,  description, parentSelector) {
         this.city = city;
@@ -47,40 +72,20 @@ function init () {
 }
 
 function slider () {         
-        if (slideIndex === 1) {            
-            slidesWrapper.classList.add('one');
-            slidesWrapper.classList.remove('two');
-            slidesWrapper.classList.remove('three');
-            slidesWrapper.classList.remove('four');
-            slidesWrapper.classList.remove('five');
+        if (slideIndex === 1) {
+            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_1.png')";
         }
         else if (slideIndex === 2) {            
-            slidesWrapper.classList.remove('one');
-            slidesWrapper.classList.add('two');
-            slidesWrapper.classList.remove('three');
-            slidesWrapper.classList.remove('four');
-            slidesWrapper.classList.remove('five');
+            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_2.png')";
         }   
         else if (slideIndex === 3) {            
-            slidesWrapper.classList.remove('one');
-            slidesWrapper.classList.remove('two');
-            slidesWrapper.classList.add('three');
-            slidesWrapper.classList.remove('four');
-            slidesWrapper.classList.remove('five');
+            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_3.png')";
         }      
         else if (slideIndex === 4) {            
-            slidesWrapper.classList.remove('one');
-            slidesWrapper.classList.remove('two');
-            slidesWrapper.classList.remove('three');
-            slidesWrapper.classList.add('four');
-            slidesWrapper.classList.remove('five');
+            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_4.png')";
         }  
         else if (slideIndex === 5) {            
-            slidesWrapper.classList.remove('one');
-            slidesWrapper.classList.remove('two');
-            slidesWrapper.classList.remove('three');
-            slidesWrapper.classList.remove('four');
-            slidesWrapper.classList.add('five');
+            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_5.png')";
         }             
     return slideIndex;
 }

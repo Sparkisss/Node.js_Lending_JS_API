@@ -18,7 +18,7 @@ body {
     height: 123px;
     margin-top: 55px;
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 20% 50% 30%;
     align-items: center; 
     border-radius: 8px;
     line-height: 1.2;
@@ -27,9 +27,14 @@ body {
 }
 .logo,
 .forma {
+    // width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    .search {
+        margin: 0 25px;
+        background-color: rgba(63, 90, 177, 0.747) !important;
+    }
 }
 .forma input {
     &:hover {

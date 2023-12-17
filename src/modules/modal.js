@@ -14,11 +14,11 @@ popupTriger.forEach((btn) => {
         body.classList.add('scroll');
         contactsContent.innerHTML = `
             <div class="popupObject__title">List of object:</div>
-            <li><a href="page1.html">Brest-Kirova-122</a></li>
-            <li>Kobrin-Druschba-54</li>
-            <li>Minsk-Pritickogo-91</li>
-            <li>Baranovichi-Kolosa-6</li>
-            <li>Brest-Sikorskogo-1</li>
+            <li><a href="page1.html">City: Brest. Street: Kirova-122.</a></li>
+            <li>City: Kobrin. Street: Druschba-54.</li>
+            <li>City: Minsk. Street: Pritickogo-91.</li>
+            <li>City: Baranovichi. Street: Kolosa-6.</li>
+            <li>City: Brest. Street: Sikorskogo-1.</li>
     `
     })
 });

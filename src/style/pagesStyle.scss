@@ -1,6 +1,11 @@
-.main__wrapper-inner {
-    .pages {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
+.main__pages {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    .main__subtitle {
+        font-size: 30px;
+        ul {
+            margin: 10px 0 15px 0;
+            font-size: 18px;
+        }
     }
 } 
