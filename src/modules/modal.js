@@ -6,7 +6,7 @@ const popupTriger = document.querySelectorAll('[data-popupObject]'),
       popupContent = document.querySelector('.popupObject'),
       popupCloseBtn = document.querySelector('[data-close]'),
       body = document.querySelector('body');
-
+      
 popupTriger.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();

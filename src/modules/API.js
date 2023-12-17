@@ -9,11 +9,11 @@ async function checkWeather() {
 
     document.querySelector('.city').innerHTML = data.name;
     document.querySelector('.outsideTemperature').innerHTML =
-        Math.round(data.main.temp) + '&#8451';
+        (data.main.temp).toFixed(1) + '&#8451';
     document.querySelector('.outsideHumidity').innerHTML =
-        Math.round(data.main.humidity) + '%';
+        (data.main.humidity) + '%';
     document.querySelector('.wind').innerHTML =
-        Math.round(data.wind.speed) + 'km/h';
+        (data.wind.speed).toFixed(1) + 'km/h';
 }
 
 checkWeather();

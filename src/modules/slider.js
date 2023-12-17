@@ -2,34 +2,8 @@ const prev = document.getElementById('prev'),
       next = document.getElementById('next'),
       renderElementOne = document.querySelector(".main__title"),
       renderElementTwo = document.querySelector(".main__text"),      
-      slidesWrapper = document.querySelector('.main__wrapper'),
-      adressOfPage = document.querySelector('.main__button a');
+      slidesWrapper = document.querySelector('.main__wrapper');
 let slideIndex = 1;
-
-// input
-const inputArea = document.querySelector('.search'),
-      searchInput = document.querySelector('#object');
-
-    inputArea.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        Object.entries(listOfObject).forEach(([key, value]) => {
-            if (value === searchInput.value) {
-            infoOfObject (+key);
-            }
-        })
-        searchInput.value = "";
-    })
-
-    const listOfObject = {
-        1: 'City: Brest. Street: Kirova-122.',
-        2: 'City: Kobrin. Street: Druschba-54.',
-        3: 'City: Minsk. Street: Pritickogo-91.',
-        4: 'City: Baranovichi. Street: Kolosa-6.',
-        5: 'City: Brest. Street: Sikorskogo-1.',
-    }
-
-// input
 
 class ObjectInormation {
     constructor(city, street, number,  description, parentSelector) {
@@ -50,15 +24,13 @@ init ();
 prev.addEventListener('click', (e) => {
     slideIndex--;
     if (slideIndex <= 0) slideIndex = 5;
-    infoOfObject (slideIndex);
-    slider();  
+    infoOfObject (slideIndex); 
 });
 
 next.addEventListener('click', (e) => {
     slideIndex++;
     if (slideIndex > 5) slideIndex = 1;
-    infoOfObject (slideIndex);
-    slider();       
+    infoOfObject (slideIndex);     
 });
 
 function init () {
@@ -71,27 +43,7 @@ function init () {
         ).render();
 }
 
-function slider () {         
-        if (slideIndex === 1) {
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_1.png')";
-        }
-        else if (slideIndex === 2) {            
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_2.png')";
-        }   
-        else if (slideIndex === 3) {            
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_3.png')";
-        }      
-        else if (slideIndex === 4) {            
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_4.png')";
-        }  
-        else if (slideIndex === 5) {            
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_5.png')";
-        }             
-    return slideIndex;
-}
-
-
-function infoOfObject (index) {
+export function infoOfObject (index) {
     switch(index) {        
         case 1: 
             new ObjectInormation(
@@ -101,7 +53,8 @@ function infoOfObject (index) {
                 "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
                 ".main__slide"
                 ).render();
-                adressOfPage.setAttribute('href', './page1.html');
+                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_1.png')";
+                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_1.png')"; 
             break;
         case 2: 
             new ObjectInormation(
@@ -111,7 +64,8 @@ function infoOfObject (index) {
                 "Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
                 ".main__slide"
                 ).render();
-                adressOfPage.setAttribute('href', './page2.html');
+                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_2.png')";
+                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_2.png')"; 
             break;
         case 3: 
             new ObjectInormation(
@@ -121,7 +75,8 @@ function infoOfObject (index) {
                 "It is text for test my try", 
                 ".main__slide"
                 ).render();
-                adressOfPage.setAttribute('href', './page3.html');
+                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_3.png')";
+                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_3.png')"; 
             break;
         case 4: 
             new ObjectInormation(
@@ -131,7 +86,8 @@ function infoOfObject (index) {
                 "I hope I can make it's right",
                 ".main__slide"
                 ).render();
-                adressOfPage.setAttribute('href', './page4.html');
+                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_4.png')";
+                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_4.png')"; 
             break;
         case 5: 
             new ObjectInormation(
@@ -141,7 +97,8 @@ function infoOfObject (index) {
                 "It is very important for me and my future",
                 ".main__slide"
                 ).render();
-                adressOfPage.setAttribute('href', './page5.html');            
+                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_5.png')";
+                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_5.png')";         
             break;
     }
 }
