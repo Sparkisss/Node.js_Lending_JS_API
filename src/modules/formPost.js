@@ -1,12 +1,21 @@
 window.addEventListener('DOMContentLoaded', () => {  
 
     const formMessage = document.querySelectorAll('form');
+    const statusMessage = document.querySelector('.userMessage');
 
     const message = {
-        loading: "Loading",
-        success: "Message was sent",
-        failure: "Something is wrong..."
+        regular: "Send",
+        loading: "Load",
+        success: "OK",
+        failure: "Err..."
     };
+
+    function requestMessage(message, styles, time) {
+        setTimeout(() => {
+            statusMessage.textContent = message;
+            statusMessage.style.border = styles;
+        }, time);
+    }
 
     formMessage.forEach(item => {
         postData(item);
@@ -15,11 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
     function postData(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-    
-            const statusMessage = document.createElement('div');
-            statusMessage.classList.add('main__title');
-            statusMessage.textContent = message.loading;
-            form.append(statusMessage);
+
+            requestMessage(message.loading, '3px solid black', 0);
     
             const request = new XMLHttpRequest();
             request.open('POST', '../server.php');
@@ -39,18 +45,17 @@ window.addEventListener('DOMContentLoaded', () => {
             request.addEventListener('load', () => {
                 if (request.status === 200) {
                     console.log(request.response);
-                    statusMessage.textContent = message.success;
+                    requestMessage(message.success, '3px solid green', 0);
                     form.reset();
-                    setTimeout(() => {
-                        statusMessage.remove();
-                    }, 2000);
+                    requestMessage(message.regular, '', 2000);
                 } else {
-                    statusMessage.textContent = message.failure;
+                    requestMessage(message.failure, '3px solid red', 0);
+                    form.reset();
+                    requestMessage(message.regular, '', 2000);
                 }
             });
         });
     }  
-
 });
 
 
