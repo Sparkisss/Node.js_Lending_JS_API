@@ -1,8 +1,6 @@
-window.addEventListener('DOMContentLoaded', () => {  
-
+window.addEventListener('DOMContentLoaded', () => { 
     const formMessage = document.querySelectorAll('form');
     const statusMessage = document.querySelector('.userMessage');
-
     const message = {
         regular: "Send",
         loading: "Load",
@@ -26,34 +24,30 @@ window.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             requestMessage(message.loading, '3px solid black', 0);
-    
-            const request = new XMLHttpRequest();
-            request.open('POST', '../server.php');
-    
-            request.setRequestHeader('Content-type', 'aplication/json');
-            const formData = new FormData(form);   
-            
+ 
+            const formData = new FormData(form);  
             const object = {};
             formData.forEach(function(value, key) {
                 object[key] = value;
             });
-
-            const json = JSON.stringify(object);
             
-            request.send(json);
-    
-            request.addEventListener('load', () => {
-                if (request.status === 200) {
-                    console.log(request.response);
-                    requestMessage(message.success, '3px solid green', 0);
-                    form.reset();
-                    requestMessage(message.regular, '', 2000);
-                } else {
-                    requestMessage(message.failure, '3px solid red', 0);
-                    form.reset();
-                    requestMessage(message.regular, '', 2000);
-                }
-            });
+            fetch('../server.php', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'aplication/json'
+                },
+                 body: JSON.stringify(object)
+            })
+            .then(data => data.text())
+            .then(data => {
+                console.log(data);
+                requestMessage(message.success, '3px solid green', 0);
+            }).catch(() => {
+                requestMessage(message.failure, '3px solid red', 0);              
+            }).finally(() => {
+                form.reset();
+                requestMessage(message.regular, '', 2000);
+            });   
         });
     }  
 });
