@@ -54,7 +54,7 @@ export function infoOfObject (index) {
                 ".main__slide"
                 ).render();
                 slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_1.png')";
-                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_1.png')"; 
+                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_1.png')"; 
             break;
         case 2: 
             new ObjectInormation(
@@ -65,7 +65,7 @@ export function infoOfObject (index) {
                 ".main__slide"
                 ).render();
                 slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_2.png')";
-                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_2.png')"; 
+                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_2.png')"; 
             break;
         case 3: 
             new ObjectInormation(
@@ -76,7 +76,7 @@ export function infoOfObject (index) {
                 ".main__slide"
                 ).render();
                 slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_3.png')";
-                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_3.png')"; 
+                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_3.png')"; 
             break;
         case 4: 
             new ObjectInormation(
@@ -87,7 +87,7 @@ export function infoOfObject (index) {
                 ".main__slide"
                 ).render();
                 slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_4.png')";
-                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_4.png')"; 
+                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_4.png')"; 
             break;
         case 5: 
             new ObjectInormation(
@@ -98,7 +98,7 @@ export function infoOfObject (index) {
                 ".main__slide"
                 ).render();
                 slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_5.png')";
-                slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_5.png')";         
+                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_5.png')";         
             break;
     }
 }
