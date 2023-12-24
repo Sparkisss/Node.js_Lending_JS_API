@@ -37,12 +37,10 @@ window.addEventListener('DOMContentLoaded', () => {
             requestMessage(message.loading, '3px solid black', 0);
  
             const formData = new FormData(form);  
-            const object = {};
-            formData.forEach(function(value, key) {
-                object[key] = value;
-            });            
 
-            postData('http://localhost:3000/requests', JSON.stringify(object))
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));         
+
+            postData('http://localhost:3000/requests', json)
             .then(data => {
                 console.log(data);
                 requestMessage(message.success, '3px solid green', 0);

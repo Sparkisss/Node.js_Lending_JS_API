@@ -31,57 +31,23 @@
     {
       "city": "Brest",
       "street": "Sikorskogo",
-      "house": 1,
+      "house": 3,
       "descr": "It is very important for me and my future",
       "parent": ".main__slide"
     }
   ],
   "requests": [
     {
+      "name": "Idrak",
       "id": 1
     },
     {
+      "name": "Ошибка датчика температуры",
       "id": 2
     },
     {
+      "name": "Обслуживание",
       "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "name": "Idrak",
-      "id": 15
     }
   ]
 }

@@ -1,3 +1,5 @@
+import {getResource} from './formGet';
+
 const prev = document.getElementById('prev'),
       next = document.getElementById('next'),
       renderElementOne = document.querySelector(".main__title"),
@@ -19,7 +21,7 @@ class ObjectInormation {
     }
 }
 
-init ();
+init (1);
 
 prev.addEventListener('click', (e) => {
     slideIndex--;
@@ -33,73 +35,26 @@ next.addEventListener('click', (e) => {
     infoOfObject (slideIndex);     
 });
 
-function init () {
-    new ObjectInormation(
-        'Brest',
-        'Kirova',
-        122,
-        "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
-        ".main__slide"
-        ).render();
+function init (index) {
+    getResource('http://localhost:3000/MyObject')
+    .then(data => {
+        data.forEach(({city, street, house, descr, parent}, i) => {
+            if ((i + 1) === index) {
+                new ObjectInormation(city, street, house, descr, parent).render();
+            }            
+        });
+    });
 }
 
 export function infoOfObject (index) {
-    switch(index) {        
-        case 1: 
-            new ObjectInormation(
-                'Brest',
-                'Kirova',
-                122,
-                "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
-                ".main__slide"
-                ).render();
-                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_1.png')";
-                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_1.png')"; 
-            break;
-        case 2: 
-            new ObjectInormation(
-                'Kobrin',
-                'Druschba',
-                54, 
-                "Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
-                ".main__slide"
-                ).render();
-                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_2.png')";
-                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_2.png')"; 
-            break;
-        case 3: 
-            new ObjectInormation(
-                'Minsk',
-                'Pritickogo',
-                91, 
-                "It is text for test my try", 
-                ".main__slide"
-                ).render();
-                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_3.png')";
-                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_3.png')"; 
-            break;
-        case 4: 
-            new ObjectInormation(
-                'Baranovichi',
-                'Kolosa',
-                6,
-                "I hope I can make it's right",
-                ".main__slide"
-                ).render();
-                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_4.png')";
-                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_4.png')"; 
-            break;
-        case 5: 
-            new ObjectInormation(
-                'Brest',
-                'Sikorskogo',
-                1,
-                "It is very important for me and my future",
-                ".main__slide"
-                ).render();
-                slidesWrapper.style.backgroundImage = "url('http://localhost/USB_UART/dist/assets/part_5.png')";
-                // slidesWrapper.style.backgroundImage = "url('http://localhost:8080/assets/part_5.png')";         
-            break;
-    }
+    getResource('http://localhost:3000/MyObject')
+    .then(data => {
+        data.forEach(({city, street, house, descr, parent}, i) => {
+            if ((i + 1) === index) {
+                new ObjectInormation(city, street, house, descr, parent).render();
+                slidesWrapper.style.backgroundImage = `url('http://localhost:8080/assets/part_${index}.png')`;
+            }            
+        });
+    });
 }
 
