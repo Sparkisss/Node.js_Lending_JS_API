@@ -20,10 +20,6 @@ module.exports = {
   entry: {
     index: './src/index.js',
     page1: './src/pages.js',
-    page2: './src/pages.js',
-    page3: './src/pages.js',
-    page4: './src/pages.js',
-    page5: './src/pages.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
