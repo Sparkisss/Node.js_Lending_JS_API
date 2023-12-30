@@ -3,7 +3,6 @@ import {getResource} from './formGet';
 
 const renderElementOne = document.querySelector(".main__title"),
       renderElementTwo = document.querySelector(".main__text");
-let testCity = document.querySelector('.main__title span');
 
 class ObjectInformation {
   constructor(city, street, number,  description, parentSelector) {
@@ -15,8 +14,7 @@ class ObjectInformation {
   }
   render() {
     renderElementOne.innerHTML = `City: <span>${this.city}</span>. Street: ${this.street}-${this.number}.`;
-    renderElementTwo.innerHTML = `${this.description}`;
-    console.log(renderElementOne.textContent);       
+    renderElementTwo.innerHTML = `${this.description}`;      
   }
 }
 
@@ -38,9 +36,9 @@ const homeButton = document.querySelectorAll('.home');
 export function sessionStorageResetting(selector) {
     selector.forEach(btn => {
         btn.addEventListener('click', () => {
-            sessionStorage.setItem('numberOfPage', 1);
+            sessionStorage.setItem('numberOfPage', 1);            
         });
+
     });
 }
-
 sessionStorageResetting(homeButton);
