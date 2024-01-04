@@ -48,7 +48,7 @@ next.addEventListener('click', (e) => {
 });
 
 function init (index) {
-    getResource('http://localhost:3000/MyObject')
+    getResource('http://localhost:3000/MyObject2023')
     .then(data => {
         data.forEach(({city, street, house, descr, parent}, i) => {
             if ((i + 1) === index) {
@@ -60,7 +60,7 @@ function init (index) {
 }
 
 export function infoOfObject (index) {
-    getResource('http://localhost:3000/MyObject')
+    getResource('http://localhost:3000/MyObject2023')
     .then(data => {
         data.forEach(({city, street, house, descr, parent}, i) => {
             if ((i + 1) === index) {
@@ -71,6 +71,58 @@ export function infoOfObject (index) {
         });
     });
 }
+
+// new slider
+
+const btnYearsUp = document.querySelector('.left .arrow__up'),
+      btnYearsDown = document.querySelector('.left .arrow__down'),
+      btnObjectUp = document.querySelector('.right .arrow__up'),
+      btnObjectDown = document.querySelector('.right .arrow__down'),
+
+      sliders = document.querySelectorAll('.left .slide__elem'),
+
+
+
+      slidWrapper = document.querySelector('.left .slider'),
+      slidesField = document.querySelector('.left .slider__wrapper'),
+
+      height = window.getComputedStyle(slidWrapper).height;
+     
+let slidIndex = 1;
+let offset = 0;
+
+slidesField.style.height = 100 * sliders.length + '%';
+slidesField.style.transition = '0.5s all';
+
+slidWrapper.style.overflow = 'hidden';
+
+btnYearsUp.addEventListener('click', () => {
+    if (offset == +height.slice(0, height.length - 2) * (sliders.length - 1)) {
+        offset = 0;
+    } else {
+        offset += +height.slice(0, height.length - 2);
+    }
+
+    slidesField.style.transform = `translateY(-${offset / 5}px)`;
+});
+
+btnYearsDown.addEventListener('click', () => {
+    if (offset == 0) {        
+        offset = +height.slice(0, height.length - 2) * (sliders.length - 1);
+    } else {
+        offset -= +height.slice(0, height.length - 2);
+    }
+
+    slidesField.style.transform = `translateY(-${offset / 5}px)`;
+});
+
+console.log(+height.slice(0, height.length - 2));
+
+
+// slidesField.style.transform = 'scale(1.1, 1.1)';
+
+
+
 
 
 

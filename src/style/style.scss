@@ -1,5 +1,7 @@
 body {
-    background-color: #eaeaea;
+    background-image: url('/src/img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .container {
     width: 1120px;
@@ -15,34 +17,25 @@ body {
 //Header
 .menu__wrapper {
     background-color: #f8f8f8;
-    height: 123px;
+    height: 100px;
     margin-top: 55px;
     display: grid;
-    grid-template-columns: 20% 50% 30%;
+    grid-template-columns: 15% 70% 15%;
     align-items: center; 
     border-radius: 8px;
     line-height: 1.2;
     letter-spacing: 0.025em;
     text-transform: uppercase;
 }
-.logo,
-.forma {
+.logo {
     // width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    .search {
-        margin: 0 25px;
-        background-color: rgba(63, 90, 177, 0.747) !important;
+    img {
+        width: 90%;
     }
 }
-.forma input {
-    &:hover {
-        transition: all 0.3s ease 0s;
-        box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.719);
-    }
-}
-
 .menu ul{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -61,6 +54,7 @@ body {
 .main {
     flex: 1 1 auto;
     position: relative;
+    padding: 0 125px;
 }
 .main__wrapper {
     height: 438px;
@@ -81,22 +75,11 @@ body {
     background-image: url('/src/img/backgroundPage.png');
 }
 
-.one {
-    background-image: url('/src/img/photoOfObject/part_1.png');
+.main__logo {
+    img {
+        width: 90%;
+    }
 }
-.two {
-    background-image: url('/src/img/photoOfObject/part_2.png');
-}
-.three {
-    background-image: url('/src/img/photoOfObject/part_3.png');
-}
-.four {
-    background-image: url('/src/img/photoOfObject/part_4.png');
-}
-.five {
-    background-image: url('/src/img/photoOfObject/part_5.png');
-}
-
 .main__logo,
 .main__title,
 .main__text {
@@ -156,12 +139,54 @@ body {
     bottom: 3%;
     left: 16%;
 }
+
+.left {
+    left: 0%;
+}
+.right {
+    right: 0%;
+}
+.left, 
+.right {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);    
+    .arrow__up {  
+        display: flex;
+        margin: 25px 0; 
+        cursor: pointer;
+        img {           
+            width: 50px;
+            margin: 0 auto;
+        }               
+    }
+    .arrow__down {  
+        display: flex;
+        margin: 25px 0;
+        cursor: pointer; 
+        img {           
+            width: 50px;
+            margin: 0 auto;
+        }               
+    }
+    .slider {
+        .slider__wrapper {
+            .slide__elem {
+
+                img {
+                    width: 100px;                   
+                    border: 2px solid white;
+                }
+            }
+        }        
+    }
+}
 //footer
 footer {
     .footer {
         background-color: #2f2f2f;
         color: #fefefe;
-        height: 123px; 
+        height: 100px; 
         margin-bottom: 55px;   
         .info {
             display: grid;
