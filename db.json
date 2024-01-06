@@ -36,6 +36,43 @@
       "parent": ".main__slide"
     }
   ],
+  "MyObject2023": [
+    {
+      "city": "London",
+      "street": "Kirova",
+      "house": 122,
+      "descr": "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "London",
+      "street": "Druschba",
+      "house": 54,
+      "descr": "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "London",
+      "street": "Pritickogo",
+      "house": 91,
+      "descr": "It is text for test my try",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "London",
+      "street": "Kolosa",
+      "house": 6,
+      "descr": "I hope I can make it's right",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "London",
+      "street": "Sikorskogo",
+      "house": 3,
+      "descr": "It is very important for me and my future",
+      "parent": ".main__slide"
+    }
+  ],
   "requests": [
     {
       "name": "Idrak",

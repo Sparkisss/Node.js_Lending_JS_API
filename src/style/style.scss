@@ -172,13 +172,24 @@ body {
     .slider {
         .slider__wrapper {
             .slide__elem {
-
                 img {
                     width: 100px;                   
                     border: 2px solid white;
                 }
             }
         }        
+    }
+}
+.slider__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+        width: 100px;                   
+        border: 2px solid white;
     }
 }
 //footer
@@ -294,3 +305,10 @@ footer {
     cursor: pointer;
   }
   
+  .test {
+    background-image: url('/src/img/years/2022.png');
+    background-image: url('/src/img/years/2023.png');
+    background-image: url('/src/img/years/2024.png');
+    background-image: url('/src/img/years/2025.png');
+    background-image: url('/src/img/years/2026.png');
+  }

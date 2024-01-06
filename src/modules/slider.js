@@ -74,52 +74,83 @@ export function infoOfObject (index) {
 
 // new slider
 
-const btnYearsUp = document.querySelector('.left .arrow__up'),
-      btnYearsDown = document.querySelector('.left .arrow__down'),
-      btnObjectUp = document.querySelector('.right .arrow__up'),
-      btnObjectDown = document.querySelector('.right .arrow__down'),
+// const btnYearsUp = document.querySelector('.left .arrow__up'),
+//       btnYearsDown = document.querySelector('.left .arrow__down'),
+//       btnObjectUp = document.querySelector('.right .arrow__up'),
+//       btnObjectDown = document.querySelector('.right .arrow__down'),
 
-      sliders = document.querySelectorAll('.left .slide__elem'),
+//       sliders = document.querySelectorAll('.left .slide__elem'),
 
 
 
-      slidWrapper = document.querySelector('.left .slider'),
-      slidesField = document.querySelector('.left .slider__wrapper'),
+//       slidWrapper = document.querySelector('.left .slider'),
+//       slidesField = document.querySelector('.left .slider__wrapper'),
 
-      height = window.getComputedStyle(slidWrapper).height;
+//       height = window.getComputedStyle(slidWrapper).height;
      
-let slidIndex = 1;
-let offset = 0;
+// let slidIndex = 1;
+// let offset = 0;
 
-slidesField.style.height = 100 * sliders.length + '%';
-slidesField.style.transition = '0.5s all';
+// slidesField.style.height = 100 * sliders.length + '%';
+// slidesField.style.transition = '0.5s all';
 
-slidWrapper.style.overflow = 'hidden';
+// slidWrapper.style.overflow = 'hidden';
 
-btnYearsUp.addEventListener('click', () => {
-    if (offset == +height.slice(0, height.length - 2) * (sliders.length - 1)) {
-        offset = 0;
-    } else {
-        offset += +height.slice(0, height.length - 2);
-    }
+// btnYearsUp.addEventListener('click', () => {
+//     if (offset == +height.slice(0, height.length - 2) * (sliders.length - 1)) {
+//         offset = 0;
+//     } else {
+//         offset += +height.slice(0, height.length - 2);
+//     }
 
-    slidesField.style.transform = `translateY(-${offset / 5}px)`;
-});
+//     slidesField.style.transform = `translateY(-${offset / 5}px)`;
+// });
 
-btnYearsDown.addEventListener('click', () => {
-    if (offset == 0) {        
-        offset = +height.slice(0, height.length - 2) * (sliders.length - 1);
-    } else {
-        offset -= +height.slice(0, height.length - 2);
-    }
+// btnYearsDown.addEventListener('click', () => {
+//     if (offset == 0) {        
+//         offset = +height.slice(0, height.length - 2) * (sliders.length - 1);
+//     } else {
+//         offset -= +height.slice(0, height.length - 2);
+//     }
 
-    slidesField.style.transform = `translateY(-${offset / 5}px)`;
-});
+//     slidesField.style.transform = `translateY(-${offset / 5}px)`;
+// });
 
-console.log(+height.slice(0, height.length - 2));
+// console.log(+height.slice(0, height.length - 2));
 
+// infinite slider
 
-// slidesField.style.transform = 'scale(1.1, 1.1)';
+const images = [
+    '2022.png', '2023.png', '2024.png', '2025.png', '2026.png'
+];
+
+let activeImage = 0,
+    setBtnFlag = true;
+const sliderPlace = document.querySelector('.left .slider__wrapper');
+const heightOffset = document.querySelector('.left').clientHeight;
+sliderPlace.style.height = heightOffset + 'px';
+console.log(heightOffset);
+
+const initSlider = () => {
+    const img = document.createElement('img');
+    img.alt = '';
+    img.src = './assets/' + images[activeImage];
+    sliderPlace.append(img);
+    nextImageGenerate();
+}
+
+const nextImageGenerate = () => {
+    let nextImage = activeImage + 1;
+    if (nextImage >= images.length) nextImage = 0;
+    const img = document.createElement('img');
+    img.alt = '';
+    img.src = './assets/' + images[nextImage];
+    sliderPlace.append(img);
+}
+
+initSlider();
+initSlider();
+
 
 
 
