@@ -1,0 +1,95 @@
+{
+  "MyObject": [
+    {
+      "city": "Brest",
+      "street": "Kirova",
+      "houseNumber": 122,
+      "typesOfWork": "1. ASCAPC system, 2. Thermal point automation, 3. Elevation pumping station,  4. Dispatching of metering devices",
+      "notation": "Construction of a r. b. on the str. Kirova 12 according to the master plan with infrastructure facilities",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "Kobrin",
+      "street": "Druschba",
+      "houseNumber": 54,
+      "typesOfWork": "1. Thermal point automation, 2. Elevation pumping station",
+      "notation": "Construction of a r. b. on the str. Druschba 4 according to the master plan.",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "Minsk",
+      "street": "Pritickogo",
+      "houseNumber": 91,
+      "typesOfWork": "1. ASCAPC system, 2. Thermal point automation, 3. Elevation pumping station,  4. Dispatching of metering devices",
+      "notation": "Construction of a r. b. on the str. Pritickogo 69 according to the master plan with infrastructure facilities.",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "Baranovichi",
+      "street": "Kolosa",
+      "houseNumber": 6,
+      "typesOfWork": "1. Thermal point automation",
+      "notation": "Construction of a r. b. on the str. Kolosa 1 according to the master plan.",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "Brest",
+      "street": "Sikorskogo",
+      "houseNumber": 3,
+      "typesOfWork": "1. Thermal point automation",
+      "notation": "Construction of a r. b. on the str. Sikorskogo 10 according to the master plan.",
+      "parent": ".main__slide"
+    }
+  ],
+  "MyObject2023": [
+    {
+      "city": "London",
+      "street": "Kirova",
+      "house": 122,
+      "descr": "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "London",
+      "street": "Druschba",
+      "house": 54,
+      "descr": "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "London",
+      "street": "Pritickogo",
+      "house": 91,
+      "descr": "It is text for test my try",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "London",
+      "street": "Kolosa",
+      "house": 6,
+      "descr": "I hope I can make it's right",
+      "parent": ".main__slide"
+    },
+    {
+      "city": "London",
+      "street": "Sikorskogo",
+      "house": 3,
+      "descr": "It is very important for me and my future",
+      "parent": ".main__slide"
+    }
+  ],
+  "requests": [
+    {
+      "name": "Idrak",
+      "id": 1
+    },
+    {
+      "name": "Ошибка датчика температуры",
+      "id": 2
+    },
+    {
+      "name": "Обслуживание",
+      "id": 3
+    }
+  ]
+}

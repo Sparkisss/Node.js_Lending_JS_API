@@ -13,17 +13,13 @@ module.exports = {
   target,
   devtool,
   devServer: {
-    port: 3000,
+    port: 8080,
     open: true,
     hot: true,
   },
   entry: {
     index: './src/index.js',
     page1: './src/pages.js',
-    page2: './src/pages.js',
-    page3: './src/pages.js',
-    page4: './src/pages.js',
-    page5: './src/pages.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -41,26 +37,6 @@ module.exports = {
       filename: "page1.html",
       template: path.resolve(__dirname, 'src/pages', 'page1.html'),
       chunks: ['page1']
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page2.html",
-      template: path.resolve(__dirname, 'src/pages', 'page2.html'),
-      chunks: ['page2']
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page3.html",
-      template: path.resolve(__dirname, 'src/pages', 'page3.html'),
-      chunks: ['page3']
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page4.html",
-      template: path.resolve(__dirname, 'src/pages', 'page4.html'),
-      chunks: ['page4']
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page5.html",
-      template: path.resolve(__dirname, 'src/pages', 'page5.html'),
-      chunks: ['page5']
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',

@@ -1,148 +1,79 @@
+import {getResource} from './formGet';
+import {sessionStorageResetting} from './renderPageOfObject';
+import {checkWeather} from './API';
+
 const prev = document.getElementById('prev'),
       next = document.getElementById('next'),
-      renderElementOne = document.querySelector(".main__title"),
-      renderElementTwo = document.querySelector(".main__text"),      
-      slidesWrapper = document.querySelector('.main__wrapper'),
-      adressOfPage = document.querySelector('.main__button a');
+      homeBtn = document.querySelectorAll('.home'),
+      renderCity = document.querySelector(".main__city"),
+      renderLocation = document.querySelector(".main__location"),
+      renderTypesOfWork = document.querySelector(".main__typesOfWork"),
+      renderWeatner = document.querySelector(".main__weather"),
+      renderNotation = document.querySelector(".main__notation");
+
+const weatherCity = document.querySelector('.city'),
+      weatherOutsideTemperature = document.querySelector('.outsideTemperature'),
+      weatherOutsideHumidity = document.querySelector('.outsideHumidity'),
+      weatherWind = document.querySelector('.wind');
+
+const apiKey = "c3ce5c27c2eab8287f2be14870b310cb",
+      city = sessionStorage.getItem('city'),
+      apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
+
 let slideIndex = 1;
 
-// input
-const inputArea = document.querySelector('.search'),
-      searchInput = document.querySelector('#object');
-
-    inputArea.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        Object.entries(listOfObject).forEach(([key, value]) => {
-            if (value === searchInput.value) {
-            infoOfObject (+key);
-            }
-        })
-        searchInput.value = "";
-    })
-
-    const listOfObject = {
-        1: 'City: Brest. Street: Kirova-122.',
-        2: 'City: Kobrin. Street: Druschba-54.',
-        3: 'City: Minsk. Street: Pritickogo-91.',
-        4: 'City: Baranovichi. Street: Kolosa-6.',
-        5: 'City: Brest. Street: Sikorskogo-1.',
-    }
-
-// input
-
-class ObjectInormation {
-    constructor(city, street, number,  description, parentSelector) {
+class ObjectInformation {
+    constructor(city, street, houseNumber,  typesOfWork, notation, parentSelector) {
         this.city = city;
         this.street = street;
-        this.number = number;
-        this.description = description;
+        this.houseNumber = houseNumber;
+        this.typesOfWork = typesOfWork;
+        this.notation = notation;
         this.parent = document.querySelector(parentSelector);
     }
     render() {
-        renderElementOne.innerHTML = `City: ${this.city}. Street: ${this.street}-${this.number}.`;
-        renderElementTwo.innerHTML = `${this.description}`       
+        renderCity.innerHTML = `City: ${this.city}.`;
+        renderLocation.innerHTML = `Street: ${this.street} - ${this.houseNumber}.`;
+        renderTypesOfWork.innerHTML = `Types of work: ${this.typesOfWork}`;
+        renderNotation.innerHTML = `Project designation: ${this.notation}`;       
+    }
+    getCityName (cityRegex, searchSelector) {
+        const cityMatch = searchSelector.textContent.match(cityRegex);
+        sessionStorage.setItem('city', cityMatch[1]);
     }
 }
 
-init ();
+infoOfObject (1);
+sessionStorageResetting(homeBtn);
 
 prev.addEventListener('click', (e) => {
-    slideIndex--;
+    slideIndex--;    
     if (slideIndex <= 0) slideIndex = 5;
     infoOfObject (slideIndex);
-    slider();  
+    sessionStorage.setItem('numberOfPage', slideIndex);        
 });
 
 next.addEventListener('click', (e) => {
     slideIndex++;
     if (slideIndex > 5) slideIndex = 1;
     infoOfObject (slideIndex);
-    slider();       
+    sessionStorage.setItem('numberOfPage', slideIndex);  
 });
 
-function init () {
-    new ObjectInormation(
-        'Brest',
-        'Kirova',
-        122,
-        "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
-        ".main__slide"
-        ).render();
+export function infoOfObject (index) {
+    getResource('http://localhost:3000/MyObject')
+    .then(data => {
+        data.forEach(({city, street, houseNumber, typesOfWork, notation, parent}, i) => {
+            if ((i + 1) === index) {
+                checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, apiUrl);
+                new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).render();
+                new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).getCityName(/City: (\w+)\./, renderCity);                                
+            }            
+        });
+    });
 }
-
-function slider () {         
-        if (slideIndex === 1) {
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_1.png')";
-        }
-        else if (slideIndex === 2) {            
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_2.png')";
-        }   
-        else if (slideIndex === 3) {            
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_3.png')";
-        }      
-        else if (slideIndex === 4) {            
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_4.png')";
-        }  
-        else if (slideIndex === 5) {            
-            slidesWrapper.style.backgroundImage = "url('http://localhost:3000/assets/part_5.png')";
-        }             
-    return slideIndex;
+// Update numberOfPage
+sessionStorage.setItem("is_reloaded", true);
+if (sessionStorage.getItem("is_reloaded")) {
+	sessionStorage.setItem('numberOfPage', 1);
 }
-
-
-function infoOfObject (index) {
-    switch(index) {        
-        case 1: 
-            new ObjectInormation(
-                'Brest',
-                'Kirova',
-                122,
-                "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
-                ".main__slide"
-                ).render();
-                adressOfPage.setAttribute('href', './page1.html');
-            break;
-        case 2: 
-            new ObjectInormation(
-                'Kobrin',
-                'Druschba',
-                54, 
-                "Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
-                ".main__slide"
-                ).render();
-                adressOfPage.setAttribute('href', './page2.html');
-            break;
-        case 3: 
-            new ObjectInormation(
-                'Minsk',
-                'Pritickogo',
-                91, 
-                "It is text for test my try", 
-                ".main__slide"
-                ).render();
-                adressOfPage.setAttribute('href', './page3.html');
-            break;
-        case 4: 
-            new ObjectInormation(
-                'Baranovichi',
-                'Kolosa',
-                6,
-                "I hope I can make it's right",
-                ".main__slide"
-                ).render();
-                adressOfPage.setAttribute('href', './page4.html');
-            break;
-        case 5: 
-            new ObjectInormation(
-                'Brest',
-                'Sikorskogo',
-                1,
-                "It is very important for me and my future",
-                ".main__slide"
-                ).render();
-                adressOfPage.setAttribute('href', './page5.html');            
-            break;
-    }
-}
-
