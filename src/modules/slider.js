@@ -8,20 +8,19 @@ const prev = document.getElementById('prev'),
       renderCity = document.querySelector(".main__city"),
       renderLocation = document.querySelector(".main__location"),
       renderTypesOfWork = document.querySelector(".main__typesOfWork"),
-      renderWeatner = document.querySelector(".main__weather"),
       renderNotation = document.querySelector(".main__notation");
 
 const weatherCity = document.querySelector('.city'),
       weatherOutsideTemperature = document.querySelector('.outsideTemperature'),
       weatherOutsideHumidity = document.querySelector('.outsideHumidity'),
       weatherWind = document.querySelector('.wind');
+      
+const apiKey = "c3ce5c27c2eab8287f2be14870b310cb";
 
-const apiKey = "c3ce5c27c2eab8287f2be14870b310cb",
-      city = sessionStorage.getItem('city'),
-      apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
-
-let slideIndex = 1;
-
+let city = sessionStorage.getItem('city'),
+    apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`,
+    slideIndex = 1;    
+      
 class ObjectInformation {
     constructor(city, street, houseNumber,  typesOfWork, notation, parentSelector) {
         this.city = city;
@@ -35,11 +34,14 @@ class ObjectInformation {
         renderCity.innerHTML = `City: ${this.city}.`;
         renderLocation.innerHTML = `Street: ${this.street} - ${this.houseNumber}.`;
         renderTypesOfWork.innerHTML = `Types of work: ${this.typesOfWork}`;
-        renderNotation.innerHTML = `Project designation: ${this.notation}`;       
+        renderNotation.innerHTML = `Project designation: ${this.notation}`; 
+
     }
     getCityName (cityRegex, searchSelector) {
         const cityMatch = searchSelector.textContent.match(cityRegex);
         sessionStorage.setItem('city', cityMatch[1]);
+        city = cityMatch[1];
+        apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
     }
 }
 
@@ -64,10 +66,10 @@ export function infoOfObject (index) {
     getResource('http://localhost:3000/MyObject')
     .then(data => {
         data.forEach(({city, street, houseNumber, typesOfWork, notation, parent}, i) => {
-            if ((i + 1) === index) {
-                checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, apiUrl);
+            if ((i + 1) === index) {  
                 new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).render();
-                new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).getCityName(/City: (\w+)\./, renderCity);                                
+                new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).getCityName(/City: (\w+)\./, renderCity);
+                checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, apiUrl);                                
             }            
         });
     });
@@ -75,5 +77,5 @@ export function infoOfObject (index) {
 // Update numberOfPage
 sessionStorage.setItem("is_reloaded", true);
 if (sessionStorage.getItem("is_reloaded")) {
-	sessionStorage.setItem('numberOfPage', 1);
+	sessionStorage.setItem('numberOfPage', 1);    
 }

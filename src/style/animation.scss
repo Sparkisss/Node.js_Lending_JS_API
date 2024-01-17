@@ -33,3 +33,15 @@
         clip: rect(0, 114px, 37px, 114px);
     }
 }
+
+@keyframes arrows {
+    0% {        
+        background-color:#ffffff;
+        border-radius: 0;
+      }    
+    100% {
+        background-color:#007bff;
+        border-radius: 50%;
+        
+      }
+}
