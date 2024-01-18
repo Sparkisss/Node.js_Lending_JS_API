@@ -36,12 +36,15 @@
 
 @keyframes arrows {
     0% {        
-        background-color:#ffffff;
-        border-radius: 0;
+        background-color:rgb(136, 134, 134);
+        border-radius: 5%;
       }    
-    100% {
+    50% {
         background-color:#007bff;
-        border-radius: 50%;
-        
+        border-radius: 50%;        
       }
+    100% {        
+        background-color:rgb(136, 134, 134);
+        border-radius: 5%;
+    }
 }

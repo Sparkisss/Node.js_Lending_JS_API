@@ -10,15 +10,15 @@
 }
 .header,
 .main {
-    margin-bottom: 125px;
+    margin-bottom: 100px;
 }
 //Header
 .menu__wrapper {
     background-color: #f8f8f8;
     height: 100px;
-    margin-top: 55px;
+    margin-top: 25px;
     display: grid;
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: 15% 75% 10%;
     align-items: center; 
     border-radius: 8px;
     line-height: 1.2;
@@ -29,9 +29,10 @@
     // width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
     img {
-        width: 90%;
+        width: 65%;
+        border-radius: 8px;     
     }
 }
 .menu ul{
@@ -46,6 +47,14 @@
             color:rgb(134, 34, 34);
             font-weight: 700;
         }
+    }
+}
+.menu__userStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 20%;
     }
 }
 // Main
@@ -146,22 +155,68 @@ footer {
         background-color: #2f2f2f;
         color: #fefefe;
         height: 100px; 
-        margin-bottom: 55px;   
-        .info {
-            display: grid;
-            grid-template-columns: 7% 1fr;
-            .info__logo {
-                display: grid;
-                justify-content: center;
-                align-items: center;
-            } 
-            .info__text {
-                font-family: 'Josefin Sans';
-                font-size: 12px;                        
+        margin-bottom: 25px;  
+        .theme {
+            height: 50%;          
+            margin-right: 10%;
+            position: relative;
+            span {
+                .sun {
+                    position: absolute;
+                    top: 0.6rem;
+                    right: 0.6rem;
+                    z-index: 1;
+                }
+                .moon {
+                    position: absolute;
+                    top: 0.6rem;
+                    left: 0.6rem;
+                    z-index: 1;
+                }
+                img {
+                    max-width: 30%;
+                }                
             }
+            input {
+                opacity: 1;
+                width: 0;
+                height: 0;
+                &:checked + .move {
+                    background-color: #204d8d;
+                }
+                &:checked + .move::before {
+                    transform: translateX(3.1rem);
+                }
+            }
+            .move {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: #f3f3f3;
+                border-radius: 3rem;
+                transition: 0.3s;
+                cursor: pointer;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background: #fff;
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 1.5rem;
+                    top: 0;
+                    bottom: 0;
+                    left: 0.12rem;
+                    box-shadow: 0 .2rem .5rem #000;
+                    transition: 0.3s;
+                    z-index: 2;
+                }
+            }           
         }
     }
 }
+
 // modal-windows
 .popupObject {
     position: fixed;
