@@ -1,42 +1,7 @@
-// button animation
-.main__button {
-    position: relative;
-    &:hover::before,
-    &:hover::after {
-        position: absolute;
-        content: '';
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        box-shadow: inset 0 0 0 2px rgba(163, 48, 19, 0.555);
-        margin: -5%;
-        animation: round 8s linear infinite;
-    }
-    &:hover::before {
-        animation-delay: -4s !important;
-    }
-}
-
-@keyframes round {
-    0%, 
-    100% {
-        clip: rect(0, 114px, 0, 0);
-    }
-    25% {
-        clip: rect(0, 0, 37px, 0);
-    }
-    50% {
-        clip: rect(37px, 114px, 37px, 0);
-    }
-    75% {
-        clip: rect(0, 114px, 37px, 114px);
-    }
-}
 
 @keyframes arrows {
     0% {        
-        background-color:rgb(136, 134, 134);
+        background-color:rgb(134, 134, 134);
         border-radius: 5%;
       }    
     50% {
@@ -44,7 +9,7 @@
         border-radius: 50%;        
       }
     100% {        
-        background-color:rgb(136, 134, 134);
+        background-color:rgb(134, 134, 134);
         border-radius: 5%;
     }
 }
