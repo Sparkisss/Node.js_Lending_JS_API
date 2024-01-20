@@ -1,5 +1,7 @@
 .wrapper {
-    background: linear-gradient(90deg, rgba(227,227,222,0.41780462184873945) 0%, rgba(122,119,104,0.5130427170868348) 50%, rgba(75,74,68,0.8883928571428571) 100%);
+    background: url('/src/img/bgLogIn.png') no-repeat; 
+    background-position: center !important;
+    background-size: cover !important; 
 }
 .container {
     width: 1120px;
@@ -26,7 +28,6 @@
     text-transform: uppercase;
 }
 .logo {
-    // width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -63,10 +64,12 @@
 }
 .main__wrapper {
     height: 438px;
-    background-color: #f8f8f8;
+    background-color: #4f96c5;
     border-radius: 8px;
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
     position: relative;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
 }
 .main__wrapper-inner {
     height: 100%;
@@ -81,40 +84,46 @@
         "city typeOfWork typeOfWork"
         "location weather notation";
     grid-gap: 2%;
-        .main__city {   
-            display: grid;
-            place-items: center;        
-            grid-area: city;
-            border-radius: 8px;
-            border: 3px solid #007bff;            
-        }
-        .main__location {
-            display: grid;
-            place-items: center;
-            grid-area: location;
-            border-radius: 8px;
-            border: 3px solid #007bff;
-        }
-        .main__typesOfWork {
-            grid-area: typeOfWork;
-            border-radius: 8px;
-            border: 3px solid #007bff;
-        }
-        .main__weather {
-            display: grid;
-            place-items: center;
-            grid-area: weather;
-            border-radius: 8px;
-            border: 3px solid #007bff;
-        }
+        .main__city,
+        .main__location,
+        .main__typesOfWork,
+        .main__weather,
         .main__notation {
             display: grid;
             place-items: center;
-            grid-area: notation;
             border-radius: 8px;
-            border: 3px solid #007bff;
+            border: 3px solid #ffffff;
+            padding: 25px;
+            background-position: center !important;
+            background-size: cover !important;
+            p {
+                border: 8px solid #3a8ac067;
+                background: #3a8ac067;
+                border-radius: 5px;
+            }             
         }
-
+        .main__city {          
+            grid-area: city;
+            background: url('/src/img/mainBackground/bgCity.jpg') no-repeat;                  
+        }
+        .main__location {
+            grid-area: location;
+        }
+        .main__typesOfWork {
+            grid-area: typeOfWork;
+            background: url('/src/img/mainBackground/works.jpg') no-repeat;
+        }
+        .main__weather {
+            grid-area: weather;
+            background: url('/src/img/mainBackground/bgCity.jpg') no-repeat;
+            li {
+                color: #fff;
+            }
+        }
+        .main__notation {
+            background: url('/src/img/mainBackground/notation.jpg') no-repeat;
+            grid-area: notation;
+        }
 }
 
 .multipages {
@@ -152,7 +161,7 @@
 //footer
 footer {
     .footer {
-        background-color: #2f2f2f;
+        background-color: #ceae2194;
         color: #fefefe;
         height: 100px; 
         margin-bottom: 25px;  
@@ -216,99 +225,7 @@ footer {
         }
     }
 }
-
-// modal-windows
-// .popupObject {
-//     position: fixed;
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba(0, 0, 0, 0.8);
-//     top: 0;
-//     left: 0;
-//     opacity: 0;
-//     visibility: hidden;
-//     transition: all 0.8s ease 0s;    
-//     .popupObject__body {
-//         min-height: 100%;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         padding: 30px 10px;
-//         .popupObject__content {
-//             border-radius: 10px;
-//             position: relative;
-//             background-color: white;
-//             color: black;
-//             max-width: 50%;
-//             padding: 30px;
-//             transition: all 0.8s ease 0s;
-//             opacity: 0;
-//             transform: perspective(600px) translate(0px, -100%) rotate(45deg);
-//             .popupObject__clouse {
-//                 position: absolute;
-//                 right: 10px;
-//                 top: 10px;                
-//             }
-//             .popupObject__title {
-//                 font-size: 40px;
-//                 margin-bottom: 1em;
-//             }
-//             li {
-//                 font-size: 20px;
-//                 margin-bottom: 10px;
-//             }
-            
-//         }        
-//     }
-// }
-
-.open {
-    opacity: 1;
-    visibility: visible;    
-}
-
-.popupObject.open .popupObject__content {
-    transform: perspective(600px) translate(0px, 0%) rotate(0deg);
-    opacity: 1;
-}
-
-.scroll {
-    overflow: hidden;
-}
-
 // .login-form {
-//     background-color: #f4f4f4;
-//     padding: 20px;
-//     border-radius: 5px;
-//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-//   }
-  
-//   .form-group {
-//     margin-bottom: 15px;
-//   }
-  
-//   label {
-//     display: block;
-//     margin-bottom: 5px;
-//   }
-  
-//   input {
-//     padding: 10px;
-//     border-radius: 5px;
-//     border: 1px solid #ccc;
-//   }
-  
-//   button {
-//     width: 100%;
-//     padding: 10px;
-//     border-radius: 5px;
-//     border: none;
-//     background-color: #007bff !important;
-//     color: #fff !important;
-//     cursor: pointer;
-//   }
-
-  //nice log in
 section {
     visibility: hidden;
     opacity: 0;
@@ -317,16 +234,15 @@ section {
     align-items: center;
     height: 550px;
     width: 450px;
-    background: url('/src/img/bgLogIn.jpg') no-repeat;
+    border-radius: 20px;
+    background: url('/src/img/bgLogIn.png') no-repeat;
     background-position: center;
     background-size: cover;
-
     position: fixed;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);      
-    transition: opacity .8s ease 0s;
- 
+    transition: all .8s ease 0s; 
     .form-box {
         position: relative;
         width: 400px;
@@ -366,7 +282,6 @@ section {
                     color: #fff;
                     font-size: 1em;
                     pointer-events: none;
-                    // transition: .5s;
                 }
                 input {
                     width: 100%;
@@ -388,7 +303,7 @@ section {
                     position: absolute;
                     right: 8px;
                     height: 20px;
-                    top: 20px;                    
+                    top: 20px;
                 }
             }
             .forget {
@@ -419,11 +334,11 @@ section {
             cursor: pointer;
             font-size: 1em;
             font-weight: 600;
-            position: relative;
-            transition: .1s;
+            position: relative;            
             &:hover {
                 top: -2px;
                 box-shadow: 0px 4px 4px 2px #000;
+                transition: .1s;
             }
             &:active {
                 top: 0;
@@ -446,4 +361,44 @@ section {
             }
         }
     }
+}
+.inputbox-contacts {
+    position: relative;
+    width: 310px;
+    margin: 10px 0;
+    border-bottom: 2px solid #fff;
+}
+ol {
+    counter-reset: my-counter;
+    list-style: none;
+    li {
+        margin-bottom: 8px;
+        counter-increment: my-counter;
+        &:before {
+            content: counter(my-counter) ". ";
+        }
+    }
+}
+
+ul {
+    color: grey;
+    font-size: 1.3em;
+    li {
+        font-size: 0.9em;
+        color: #000;
+        padding-top: 8px;
+        a {
+            transition: all 0.3s;
+            &:hover {
+                color:rgb(134, 34, 34);
+            }
+        }
+    }
+}
+.open {
+    opacity: 1;
+    visibility: visible;    
+}
+.scroll {
+    overflow: hidden;
 }

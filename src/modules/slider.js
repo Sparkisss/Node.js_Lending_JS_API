@@ -31,11 +31,10 @@ class ObjectInformation {
         this.parent = document.querySelector(parentSelector);
     }
     render() {
-        renderCity.innerHTML = `City: ${this.city}.`;
-        renderLocation.innerHTML = `Street: ${this.street} - ${this.houseNumber}.`;
-        renderTypesOfWork.innerHTML = `Types of work: ${this.typesOfWork}`;
-        renderNotation.innerHTML = `Project designation: ${this.notation}`; 
-
+        renderCity.innerHTML = `<p>City: ${this.city}.</p>`;
+        renderLocation.innerHTML = `<p>Street: ${this.street} - ${this.houseNumber}.</p>`;
+        renderTypesOfWork.innerHTML = `<p>Types of work: ${this.typesOfWork}</p>`;
+        renderNotation.innerHTML = `<p>Project designation: ${this.notation}</p>`; 
     }
     getCityName (cityRegex, searchSelector) {
         const cityMatch = searchSelector.textContent.match(cityRegex);
@@ -69,7 +68,8 @@ export function infoOfObject (index) {
             if ((i + 1) === index) {  
                 new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).render();
                 new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).getCityName(/City: (\w+)\./, renderCity);
-                checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, apiUrl);                                
+                checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, apiUrl);
+                renderLocation.style.background = `url('/assets/part_${index}.jpg') no-repeat`                                
             }            
         });
     });
