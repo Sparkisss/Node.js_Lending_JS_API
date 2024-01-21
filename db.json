@@ -4,7 +4,7 @@
       "city": "Brest",
       "street": "Kirova",
       "houseNumber": 122,
-      "typesOfWork": "1. ASCAPC system, 2. Thermal point automation, 3. Elevation pumping station,  4. Dispatching of metering devices",
+      "typesOfWork": ["1. ASCAPC system", "2. Thermal point automation", "3. Elevation pumping station",  "4. Dispatching of metering devices"],
       "notation": "Construction of a r. b. on the str. Kirova 12 according to the master plan with infrastructure facilities",
       "parent": ".main__slide"
     },

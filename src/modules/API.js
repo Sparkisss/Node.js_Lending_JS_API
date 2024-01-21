@@ -5,9 +5,10 @@ city = sessionStorage.getItem('city'),
 const weatherCity = document.querySelector('.city'),
       weatherOutsideTemperature = document.querySelector('.outsideTemperature'),
       weatherOutsideHumidity = document.querySelector('.outsideHumidity'),
-      weatherWind = document.querySelector('.wind');
+      weatherWind = document.querySelector('.wind'),
+      weatherIcon = document.getElementById('status');
 
-async function checkWeather(city, temp, hum, wind, api) {    
+async function checkWeather(city, temp, hum, wind, icon, api) {    
     const response = await fetch(api);
     const data = await response.json();
     console.log(data, "data");    
@@ -15,7 +16,8 @@ async function checkWeather(city, temp, hum, wind, api) {
     temp.innerHTML = (data.main.temp).toFixed(1) + '&#8451';
     hum.innerHTML = (data.main.humidity) + '%';
     wind.innerHTML = (data.wind.speed).toFixed(1) + 'km/h';
+    icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
 }
-checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, apiUrl);
+checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, weatherIcon, apiUrl);
 
-export {checkWeather, apiUrl, city};
+export {checkWeather, city};

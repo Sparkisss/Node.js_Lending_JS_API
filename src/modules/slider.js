@@ -13,7 +13,8 @@ const prev = document.getElementById('prev'),
 const weatherCity = document.querySelector('.city'),
       weatherOutsideTemperature = document.querySelector('.outsideTemperature'),
       weatherOutsideHumidity = document.querySelector('.outsideHumidity'),
-      weatherWind = document.querySelector('.wind');
+      weatherWind = document.querySelector('.wind'),
+      weatherIcon = document.getElementById('status');
       
 const apiKey = "c3ce5c27c2eab8287f2be14870b310cb";
 
@@ -68,8 +69,9 @@ export function infoOfObject (index) {
             if ((i + 1) === index) {  
                 new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).render();
                 new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).getCityName(/City: (\w+)\./, renderCity);
-                checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, apiUrl);
-                renderLocation.style.background = `url('/assets/part_${index}.jpg') no-repeat`                                
+                checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, weatherIcon, apiUrl);
+                renderLocation.style.background = `url('/assets/part_${index}.jpg') no-repeat`;
+                console.log(data[0].typesOfWork[2]);                                
             }            
         });
     });

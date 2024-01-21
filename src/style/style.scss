@@ -8,16 +8,15 @@
     margin: 0 auto;
     min-height: 100%;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
 }
-.header,
 .main {
-    margin-bottom: 100px;
+    margin: 100px 0;
+    flex: 1 1 auto;
 }
 //Header
 .menu__wrapper {
-    background-color: #f8f8f8;
-    height: 100px;
+    background-color: #ffffff94;
     margin-top: 25px;
     display: grid;
     grid-template-columns: 15% 75% 10%;
@@ -32,21 +31,25 @@
     justify-content: center;
     align-items: center;    
     img {
-        width: 65%;
-        border-radius: 8px;     
+        width: 35%;
+        padding: 10px;
     }
 }
-.menu ul{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    li {
-        cursor: pointer;        
+.menu {    
+    ul{
         display: grid;
-        justify-content: center;
-        transition: all 0.3s ease 0s;
-        &:hover {
-            color:rgb(134, 34, 34);
+        grid-template-columns: repeat(4, 1fr);        
+        li {
+            cursor: pointer;        
+            display: grid;
+            justify-content: center;
+            transition: all 0.3s ease 0s;
+            color: #000000;
             font-weight: 700;
+            &:hover {
+                color:rgb(134, 34, 34);
+                font-weight: 700;
+            }
         }
     }
 }
@@ -63,12 +66,12 @@
     width: 100%;
 }
 .main__wrapper {
-    height: 438px;
+    height: 58.5vh;
     background-color: #4f96c5;
     border-radius: 8px;
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
     position: relative;
-    color: rgb(255, 255, 255);
+    color: #000;
     font-weight: 700;
 }
 .main__wrapper-inner {
@@ -97,8 +100,8 @@
             background-position: center !important;
             background-size: cover !important;
             p {
-                border: 8px solid #3a8ac067;
-                background: #3a8ac067;
+                border: 8px solid #fff;
+                background: #fff;
                 border-radius: 5px;
             }             
         }
@@ -108,17 +111,38 @@
         }
         .main__location {
             grid-area: location;
+            cursor: pointer;
+            transition: all .8s;
+            &:hover {
+                box-shadow: 0px 12px 10px 0px rgb(0, 0, 0);
+                transform: scale(1.01, 1.01);
+            }
         }
         .main__typesOfWork {
             grid-area: typeOfWork;
             background: url('/src/img/mainBackground/works.jpg') no-repeat;
         }
         .main__weather {
+            position: relative;
             grid-area: weather;
             background: url('/src/img/mainBackground/bgCity.jpg') no-repeat;
-            li {
-                color: #fff;
+            .weather__icon {
+                position: absolute;
+                top: -5%;
+                right: -0%;
+                img {
+                    height: 4em;
+                }
             }
+            ul {
+                border: 8px solid #fff;
+                background: #fff;
+                border-radius: 5px;
+                li {
+                    color: #000;                    
+                }
+            }
+            
         }
         .main__notation {
             background: url('/src/img/mainBackground/notation.jpg') no-repeat;
@@ -161,24 +185,21 @@
 //footer
 footer {
     .footer {
-        background-color: #ceae2194;
-        color: #fefefe;
-        height: 100px; 
         margin-bottom: 25px;  
         .theme {
-            height: 50%;          
+            height: 75%;          
             margin-right: 10%;
             position: relative;
             span {
                 .sun {
                     position: absolute;
-                    top: 0.6rem;
+                    top: 0.5rem;
                     right: 0.6rem;
                     z-index: 1;
                 }
                 .moon {
                     position: absolute;
-                    top: 0.6rem;
+                    top: 0.5rem;
                     left: 0.6rem;
                     z-index: 1;
                 }
@@ -194,7 +215,7 @@ footer {
                     background-color: #204d8d;
                 }
                 &:checked + .move::before {
-                    transform: translateX(3.1rem);
+                    transform: translateX(3.4rem);
                 }
             }
             .move {
@@ -211,8 +232,8 @@ footer {
                     position: absolute;
                     content: "";
                     background: #fff;
-                    width: 3rem;
-                    height: 3rem;
+                    width: 2.8rem;
+                    height: 2.8rem;
                     border-radius: 1.5rem;
                     top: 0;
                     bottom: 0;
@@ -379,7 +400,6 @@ ol {
         }
     }
 }
-
 ul {
     color: grey;
     font-size: 1.3em;
