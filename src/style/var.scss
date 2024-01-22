@@ -1,1 +1,13 @@
+html.light {
+    --color-bg-head: #ffffff94;
+    --color-text: #000000;
+    --color-bg-main: #4f96c5;
+    --color--border: 3px solid #000000;
+}
 
+html.dark {
+    --color-bg-head: #03030394;
+    --color-text: #ffffff;
+    --color-bg-main: #111314;
+    --color--border: 3px solid #ffffff;
+}

@@ -7,7 +7,6 @@ import './modules/formGet';
 import './modules/formPost';
 
 
-
 window.addEventListener('DOMContentLoaded', () => {  
     
 });

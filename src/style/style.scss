@@ -16,7 +16,7 @@
 }
 //Header
 .menu__wrapper {
-    background-color: #ffffff94;
+    background-color: var(--color-bg-head);
     margin-top: 25px;
     display: grid;
     grid-template-columns: 15% 75% 10%;
@@ -44,7 +44,7 @@
             display: grid;
             justify-content: center;
             transition: all 0.3s ease 0s;
-            color: #000000;
+            color: var(--color-text);
             font-weight: 700;
             &:hover {
                 color:rgb(134, 34, 34);
@@ -67,7 +67,7 @@
 }
 .main__wrapper {
     height: 58.5vh;
-    background-color: #4f96c5;
+    background-color:var(--color-bg-main);
     border-radius: 8px;
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
     position: relative;
@@ -95,7 +95,7 @@
             display: grid;
             place-items: center;
             border-radius: 8px;
-            border: 3px solid #ffffff;
+            border: var(--color--border);
             padding: 25px;
             background-position: center !important;
             background-size: cover !important;
