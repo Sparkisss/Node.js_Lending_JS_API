@@ -76,6 +76,7 @@ export function infoOfObject (index) {
         });
     });
 }
+
 // Update numberOfPage
 sessionStorage.setItem("is_reloaded", true);
 if (sessionStorage.getItem("is_reloaded")) {

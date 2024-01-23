@@ -1,3 +1,5 @@
+import {getResource} from './formGet';
+
 const popupTriger = document.querySelectorAll('[data-popupObject]'),
       popupTrigerContacts = document.querySelectorAll('[data-popupContacts]'),
       popupTrigerForm = document.querySelectorAll('[data-popupForm]'),
@@ -6,25 +8,31 @@ const popupTriger = document.querySelectorAll('[data-popupObject]'),
       popupCloseBtn = document.querySelector('[data-close]'),
       body = document.querySelector('body');
 
+
 popupTriger.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
         popupContent.classList.toggle('open');
         body.classList.add('scroll');
-        inContent.innerHTML = `
-            <h2>List of object</h2>
-            <div class="inputbox">                            
-                <ol>
-                    <li><a href="page1.html">City: Brest. Street: Kirova-122.</a></li>
-                    <li><a href="page1.html">City: Kobrin. Street: Druschba-54.</a></li>
-                    <li><a href="page1.html">City: Minsk. Street: Pritickogo-91.</a></li>
-                    <li><a href="page1.html">City: Baranovichi. Street: Kolosa-6.</a></li>
-                    <li><a href="page1.html">City: Brest. Street: Sikorskogo-1.</a></li>
-                </ol>            
-            </div>
-    `
+        modalObjectRender ();
     })
 });
+//render modal -- Object
+function modalObjectRender () {
+    getResource('http://localhost:3000/MyObject')
+    .then(data => {
+        inContent.innerHTML = `
+        <h2>List of object:</h2>
+        <div class="inputbox"></div>
+        `
+        data.forEach(({city, street, houseNumber}, i) => { 
+            const newObjectCity = document.createElement('a');
+            newObjectCity.setAttribute('href', 'page1.html');
+            newObjectCity.textContent = `${i+1}. ${city} - ${street} ${houseNumber} `;
+            inContent.appendChild(newObjectCity);
+        });
+    });
+}
 
 popupTrigerContacts.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -104,3 +112,4 @@ document.addEventListener('keydown', (e) => {
         body.classList.remove('scroll');
     }
 });
+

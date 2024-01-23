@@ -31,7 +31,19 @@ import {getResource} from './formGet';
 
 // infoObject (+sessionStorage.getItem('numberOfPage'));
 
-const homeButton = document.querySelectorAll('.home');
+// const homeButton = document.querySelectorAll('.home');
+
+// export function sessionStorageResetting(selector) {
+//     selector.forEach(btn => {
+//         btn.addEventListener('click', () => {
+//             sessionStorage.setItem('numberOfPage', 1);            
+//         });
+
+//     });
+// }
+// sessionStorageResetting(homeButton);
+
+const homeBtnReset = document.querySelectorAll('.homes');
 
 export function sessionStorageResetting(selector) {
     selector.forEach(btn => {
@@ -41,4 +53,4 @@ export function sessionStorageResetting(selector) {
 
     });
 }
-sessionStorageResetting(homeButton);
+sessionStorageResetting(homeBtnReset);

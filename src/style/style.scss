@@ -275,8 +275,16 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 50px 0;        
+        margin: 50px 0;     
         form {
+            .form__content {
+                a {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 5px;
+                    cursor: pointer;
+                }
+            }
             .section__clouse {
                 position: absolute;
                 top: 5%;
@@ -294,7 +302,6 @@ section {
                 width: 310px;
                 margin: 30px 0;
                 border-bottom: 2px solid #fff;
-
                 label {
                     position: absolute;
                     top: 50%;
