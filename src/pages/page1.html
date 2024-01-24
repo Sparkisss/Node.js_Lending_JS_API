@@ -15,15 +15,18 @@
             <header class="header">
                 <div class="menu__wrapper">
                     <div class="logo">
-                        <img src="/src/img/logo/lemon_logo.png" alt="404">
+                        <img src="/src/img/logo/wepik.svg" alt="404">
                     </div>
                     <div class="menu">
                         <ul>
-                            <li class="homes"><a href="./index.html">Home</a></li>
-                            <li>Comments</li>
-                            <li>Info</li>
-                            <li>Statistic</li>                            
+                            <li class="home"><a href="./index.html">Home</a></li>
+                            <li data-popupObject>Objects</li>
+                            <li data-popupForm>Login</li>
+                            <li data-popupContacts>Contacts</li>
                         </ul>
+                    </div>
+                    <div class="menu__userStatus">
+                        <img src="/src/img/usreIcon/user-add.svg" alt="404">
                     </div>
                 </div>                
             </header>
@@ -61,22 +64,26 @@
             <footer class="footer">
                 <div class="menu__wrapper footer">
                     <div class="logo">
-                        <img src="/src/img/logo/logo_white.png" alt="404">
+                        <img src="/src/img/logo/wepik.svg" alt="404">
                     </div>
                     <div class="menu">
-                        <ul>
-                            <li class="homes"><a href="./index.html">Home</a></li>
-                            <li>Comments</li>
-                            <li>Info</li>
-                            <li>Statistic</li>
+                        <ul id="test">
+                            <li class="home"><a href="./index.html">Home</a></li>
+                            <li data-popupObject>Objects</li>
+                            <li data-popupForm>Login</li>
+                            <li data-popupContacts>Contacts</li>
                         </ul>
                     </div>
-                    <div class="info">
-                        <div class="info__logo">
-                            <img src="/src/img/logo/footer_icon.png" alt="">
-                        </div>
-                        <div class="info__text">2023 LEMON. All right reserved</div>                        
-                    </div>
+                    <label class="theme">
+                        <span>
+                            <img class="sun" src="/src/img/icon/sun.svg" alt="">
+                        </span>
+                        <span>
+                            <img class="moon" src="/src/img/icon/moon.svg" alt="">
+                        </span>
+                        <input class="toggleBtn" type="checkbox">
+                        <span class="move"></span>                       
+                    </label>
                 </div>
             </footer>
             

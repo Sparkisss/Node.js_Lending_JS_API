@@ -29,9 +29,10 @@ function modalObjectRender () {
             const newObjectCity = document.createElement('a');
             newObjectCity.setAttribute('href', 'page1.html');
             newObjectCity.textContent = `${i+1}. ${city} - ${street} ${houseNumber} `;
-            inContent.appendChild(newObjectCity);
+            inContent.appendChild(newObjectCity);   
         });
     });
+    
 }
 
 popupTrigerContacts.forEach((btn) => {
@@ -112,4 +113,3 @@ document.addEventListener('keydown', (e) => {
         body.classList.remove('scroll');
     }
 });
-

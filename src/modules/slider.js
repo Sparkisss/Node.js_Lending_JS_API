@@ -1,5 +1,4 @@
 import {getResource} from './formGet';
-import {sessionStorageResetting} from './renderPageOfObject';
 import {checkWeather} from './API';
 
 const prev = document.getElementById('prev'),
@@ -46,7 +45,6 @@ class ObjectInformation {
 }
 
 infoOfObject (1);
-sessionStorageResetting(homeBtn);
 
 prev.addEventListener('click', (e) => {
     slideIndex--;    
