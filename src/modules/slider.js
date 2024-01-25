@@ -80,3 +80,9 @@ sessionStorage.setItem("is_reloaded", true);
 if (sessionStorage.getItem("is_reloaded")) {
 	sessionStorage.setItem('numberOfPage', 1);    
 }
+//go to the next page
+let transitionToNextPage = document.querySelector('.main__location');
+
+transitionToNextPage.addEventListener('click', () => {
+    window.location.href = 'page1.html';
+})
