@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">    
@@ -32,33 +32,39 @@
             </header>
 
             <main class="main">
-                <div class="main__wrapper multipages">
+                <div class="main__wrapper">
                     <div class="main__wrapper-inner">
-                        <div class="main__slide">
-                            <div class="main__title">City: Brest. Street: Kirova-122.</div>
-                            <div class="main__text">Description</div>
-                        </div>
-                        <div class="main__pages">
-                            <div class="main__subtitle">Date of sensors:
-                                <ul>
-                                    <li id="temperature">init...</li>
-                                    <li id="humidity">init...</li>
-                                    <li id="counter">init...</li>
-                                </ul>
+                        <div class="main__slide multipages">
+                            <div class="slideOfObject">
+                                <img class="one" src="/src/img/page1Main/ASCAPC.png" alt="">
                             </div>
-                            <div class="main__subtitle">Date of API:
-                                <ul>
-                                    <li class="city">init...</li>
-                                    <li class="outsideTemperature">init...</li>
-                                    <li class="outsideHumidity">init...</li>
-                                    <li class="wind">init...</li>
-                                </ul> 
+                            <div class="slideOfFlat"></div>
+                            <div class="typePanel"></div>
+                            <div class="timePanel"></div>
+                            <div class="informPanel">
+                                <div class="main__title">City: Brest. Street: Kirova-122.</div>
+                                <div class="main__text">Description</div>
+                                <div class="main__subtitle">Date of sensors:
+                                    <ul>
+                                        <li id="temperature">init...</li>
+                                        <li id="humidity">init...</li>
+                                        <li id="counter">init...</li>
+                                    </ul>
+                                </div>
+                                <div class="main__subtitle">Date of API:
+                                    <ul>
+                                        <li class="city">init...</li>
+                                        <li class="outsideTemperature">init...</li>
+                                        <li class="outsideHumidity">init...</li>
+                                        <li class="wind">init...</li>
+                                    </ul> 
+                                </div>
+                                <div class="main__state">All right.</div>
                             </div>
-                        </div>                       
-                    </div>
-                    <div class="main__state">All right.</div>
+                            
+                        </div>                 
+                    </div> 
                 </div>
-
             </main>
 
             <footer class="footer">
@@ -85,17 +91,7 @@
                         <span class="move"></span>                       
                     </label>
                 </div>
-            </footer>
-            
-            <div id="popupObject" class="popupObject">
-                <div class="popupObject__body">
-                    <div class="popupObject__content">
-                        <a href="" data-close class="popupObject__clouse">&#10006</a>                        
-                        <div class="list"></div>
-                    </div>
-                </div>
-            </div>
-            
+            </footer>    
         </div>
     </div>
 </body>

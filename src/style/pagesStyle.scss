@@ -1,11 +1,85 @@
-.main__pages {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    .main__subtitle {
-        font-size: 30px;
-        ul {
-            margin: 10px 0 15px 0;
-            font-size: 18px;
+.main {
+    .main__wrapper {
+        height: 100%;
+        .main__wrapper-inner {
+             .multipages{
+                padding: 3%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 7% 5% 2fr 1fr;
+                grid-template-rows: 15% 1fr;
+                grid-template-areas: 
+                    "slideOfObject slideOfFlat typePanel timePanel"
+                    "slideOfObject slideOfFlat informPanel informPanel";
+                grid-gap: 2%;
+                    .slideOfObject,
+                    .slideOfFlat,
+                    .typePanel,
+                    .timePanel,
+                    .informPanel {
+                        display: grid;
+                        place-items: center;
+                        border-radius: 8px;
+                        border: var(--color--border);
+                        padding: 25px;
+                        background-position: center !important;
+                        background-size: cover !important;
+                        p {
+                            border: 8px solid #fff;
+                            background: #fff;
+                            border-radius: 5px;
+                        }             
+                    }
+                    .slideOfObject {          
+                        grid-area: slideOfObject;
+                        display: grid;
+                        grid-template-rows: repeat(4, 1fr);
+                        grid-template-areas: 
+                        "one"
+                        "two"
+                        "three"
+                        "four";
+                        .one {
+                            grid-area: one;
+                        }                
+                    }
+                    .slideOfFlat {
+                        grid-area: slideOfFlat;
+                        cursor: pointer;
+                        transition: all .8s;
+                        &:hover {
+                            box-shadow: 0px 12px 10px 0px rgb(0, 0, 0);
+                            transform: scale(1.01, 1.01);
+                        }
+                    }
+                    .typePanel {
+                        grid-area: typePanel;
+                    }
+                    .timePanel{
+                        position: relative;
+                        grid-area: timePanel;
+                        .weather__icon {
+                            position: absolute;
+                            top: -5%;
+                            right: -0%;
+                            img {
+                                height: 4em;
+                            }
+                        }
+                        ul {
+                            border: 8px solid #fff;
+                            background: #fff;
+                            border-radius: 5px;
+                            li {
+                                color: #000;                    
+                            }
+                        }
+                        
+                    }
+                    .informPanel {
+                        grid-area: informPanel;
+                    }
+            }
         }
     }
-} 
+}
