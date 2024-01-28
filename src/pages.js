@@ -5,6 +5,7 @@ import './modules/renderPageOfObject';
 import './modules/formGet';
 import './modules/formPost';
 import './modules/theme';
+import './modules/select';
 
 
 window.addEventListener('DOMContentLoaded', () => {  

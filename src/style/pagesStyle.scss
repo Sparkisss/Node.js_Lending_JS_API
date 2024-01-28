@@ -1,6 +1,5 @@
 .main {
     .main__wrapper {
-        height: 100%;
         .main__wrapper-inner {
              .multipages{
                 padding: 3%;
@@ -17,20 +16,14 @@
                     .typePanel,
                     .timePanel,
                     .informPanel {
-                        display: grid;
-                        place-items: center;
                         border-radius: 8px;
                         border: var(--color--border);
-                        padding: 25px;
+                        padding: 5px;
                         background-position: center !important;
-                        background-size: cover !important;
-                        p {
-                            border: 8px solid #fff;
-                            background: #fff;
-                            border-radius: 5px;
-                        }             
+                        background-size: cover !important;       
                     }
-                    .slideOfObject {          
+                    .slideOfObject {
+                        background-color: rgba(69, 73, 72, 0.377);          
                         grid-area: slideOfObject;
                         display: grid;
                         grid-template-rows: repeat(4, 1fr);
@@ -39,42 +32,70 @@
                         "two"
                         "three"
                         "four";
+                        grid-gap: 2%;
+                        .one,
+                        .two,
+                        .three,
+                        .four {                            
+                            background-position: center !important;
+                            background-size: contain !important;
+                            transform: scale(0.85, 0.85); 
+                            transition: all .3s;
+                            cursor: pointer;
+                            &:hover {
+                                transform: scale(1, 1);
+                                box-shadow: 0px 12px 10px 0px rgb(0, 0, 0);
+                            } 
+                        }
                         .one {
-                            grid-area: one;
+                            grid-area: one;                                               
+                            background: url('/src/img/page1Main/ASCAPC.png') no-repeat;   
+                        }
+                        .two {
+                            grid-area: two;
+                            background: url('/src/img/page1Main/automation.png') no-repeat; 
+                        }
+                        .three {
+                            grid-area: three;
+                            background: url('/src/img/page1Main/pump.png') no-repeat; 
+                        }
+                        .four {
+                            grid-area: four;
+                            background: url('/src/img/page1Main/dispatch.png') no-repeat; 
                         }                
                     }
                     .slideOfFlat {
                         grid-area: slideOfFlat;
-                        cursor: pointer;
-                        transition: all .8s;
-                        &:hover {
-                            box-shadow: 0px 12px 10px 0px rgb(0, 0, 0);
-                            transform: scale(1.01, 1.01);
+                        height: 75%;
+                        align-self: center;
+                        position: relative;
+                        ul {                                                  
+                            li {
+                                display: flex;
+                                justify-content: center;
+                                transition: all .5s;
+                                cursor: pointer; 
+                                &:hover {
+                                    transform: scale(1.5, 1.5);
+                                }
+                            }
+                        }
+                        .slideOfFlat-up {
+                            position: absolute;
+                            top: -15%;
+                            right: 15%;
+                        }
+                        .slideOfFlat-down {
+                            position: absolute;
+                            bottom: -15%;
+                            right: 15%;
                         }
                     }
                     .typePanel {
                         grid-area: typePanel;
                     }
                     .timePanel{
-                        position: relative;
                         grid-area: timePanel;
-                        .weather__icon {
-                            position: absolute;
-                            top: -5%;
-                            right: -0%;
-                            img {
-                                height: 4em;
-                            }
-                        }
-                        ul {
-                            border: 8px solid #fff;
-                            background: #fff;
-                            border-radius: 5px;
-                            li {
-                                color: #000;                    
-                            }
-                        }
-                        
                     }
                     .informPanel {
                         grid-area: informPanel;
@@ -82,4 +103,9 @@
             }
         }
     }
+}
+
+.test {
+    background: url('/src/img/down.png') no-repeat;
+    background: url('/src/img/up.png') no-repeat;
 }
