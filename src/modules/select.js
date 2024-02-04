@@ -1,9 +1,12 @@
+import {getResource} from './formGet';
+
 const chooseJob = document.querySelectorAll('.slideOfObject div'),
       chooseSubJob = document.querySelectorAll('.typePanel div'),
       chooseFlat = document.querySelectorAll('.slideOfFlat li'),
       btnUp = document.querySelector('.slideOfFlat-up'),
       btnDown = document.querySelector('.slideOfFlat-down'),
       selectOptions = document.querySelector('.selectOptions');
+let rooms = sessionStorage.getItem('rooms');
 
 function override (selector) {
     selector.forEach((elems) => {
@@ -41,8 +44,6 @@ function renderTypePanel(one, two, three) {
 }
 
 function renderSelectPanel(programNumber) {
-    console.log(programNumber);
-    
     if (programNumber === 2 || programNumber === 3) {
         selectOptions.innerHTML = `
         <li>50</li>
@@ -61,31 +62,108 @@ function renderSelectPanel(programNumber) {
             <li>8</li>
             <li>9</li>                                    
         `
-        // const selectOptions = document.querySelector('.selectOptions li');
-        
-        
-        
+        const chooseFlat = document.querySelectorAll('.slideOfFlat li');
+        override (chooseFlat);
+        if (programNumber === 1) {
+            getRoomInfo(chooseFlat);
+        }
+        pickRoom(rooms, 1, Math.floor(rooms/9), rooms % 9, chooseFlat);
     }
+}
 
+function pickRoom(rooms, myIndex, count, rest, selector) {
+    btnUp.addEventListener('click', () => {
+        myIndex--;
+        if (myIndex > count) myIndex = count;
+        if (myIndex <= 0) myIndex = 1;
+        if (myIndex === count) {
+            selector.forEach((e, i) => {
+                if (!e.innerText) {     
+                    e.innerText = rooms - rest + i - 8;
+                }else e.innerText = +(e.innerText) - 9;
+            })
+        } else if (myIndex < count) {
+            selector.forEach((e) => {
+                if (+(e.innerText) <= 9) {
+                    e.innerText = e.innerText;
+                }else e.innerText = +(e.innerText) - 9;
+            })
+        }
+    })
+    
+    btnDown.addEventListener('click', () => { 
+        if (count > myIndex) {
+            myIndex++;
+            selector.forEach((e) => {
+                e.innerText = +(e.innerText) + 9;
+            })
+        }else if (myIndex === count) {
+            selector.forEach((e, i) => {
+                if (i <= (rest - 1)) {
+                    e.innerText = +(e.innerText) + 9;
+                }else if(i !== (rest - 1))  {
+                    e.innerText = '';
+                }
+            })
+            myIndex++;
+        }
+    })
+}
+
+function renderinformPanel(supplyMeter, accumulatedExpense, instantaneousRateOfFlow, startDate, endDate) {
+    document.querySelector('.informPanel').innerHTML = `
+    <ul>
+        <li>Тип прибора: ${supplyMeter}</li>
+        <li>Накопленный расход: ${accumulatedExpense} kW</li>
+        <li>Мнгновенный  расход: ${instantaneousRateOfFlow} kW</li>
+        <li>Дата поверки: ${startDate}</li>
+        <li>Следующая дата поверки: ${endDate}</li>
+    </ul>
+    `
+}
+
+function roomInfo (index, rommsNumber) {
+    getResource('http://localhost:3000/MyObject')
+      .then(data => {
+        data.forEach(({apartmentReadings}, i) => {
+            if ((i + 1) === index) {
+                renderinformPanel
+                (apartmentReadings[rommsNumber].supplyMeter, 
+                apartmentReadings[rommsNumber].accumulatedExpense, 
+                apartmentReadings[rommsNumber].instantaneousRateOfFlow, 
+                apartmentReadings[rommsNumber].startDate, 
+                apartmentReadings[rommsNumber].endDate)             
+            }            
+        });
+      });
+  }
+
+  function introductoryCounterInfo (index, number) {
+    getResource('http://localhost:3000/MyObject')
+      .then(data => {
+        data.forEach(({introductoryCounter}, i) => {
+            if ((i + 1) === index) {
+                renderinformPanel
+                (introductoryCounter[number].supplyMeter, 
+                introductoryCounter[number].accumulatedExpense, 
+                introductoryCounter[number].instantaneousRateOfFlow, 
+                introductoryCounter[number].startDate, 
+                introductoryCounter[number].endDate)             
+            }            
+        });
+      });
+  }
+  
+  function getRoomInfo(selector) {
+    selector.forEach(item => {
+        item.addEventListener('click', () => {
+            roomInfo (1, +(item.innerText) - 1)
+        })
+    })
 }
 
 override (chooseJob);
 override (chooseSubJob);
 override (chooseFlat);
-
-btnUp.addEventListener('click', () => {
-    chooseFlat.forEach((e) => {
-        if (+(e.innerText) <= 9){
-            e.innerText = e.innerText;
-        } else e.innerText = +(e.innerText) - 9;  
-    })
-})
-
-btnDown.addEventListener('click', () => {
-    chooseFlat.forEach((e) => {
-        if (+(e.innerText) >= (37-9)) {
-            e.innerText = e.innerText;
-        } else e.innerText = +(e.innerText) + 9;
-        
-    })
-})
+pickRoom(rooms, 1, Math.floor(rooms/9), rooms % 9, chooseFlat);
+getRoomInfo(chooseFlat);

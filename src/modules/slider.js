@@ -22,12 +22,13 @@ let city = sessionStorage.getItem('city'),
     slideIndex = 1;    
       
 class ObjectInformation {
-    constructor(city, street, houseNumber,  typesOfWork, notation, parentSelector) {
+    constructor(city, street, houseNumber,  typesOfWork, notation, rooms, parentSelector) {
         this.city = city;
         this.street = street;
         this.houseNumber = houseNumber;
         this.typesOfWork = typesOfWork;
         this.notation = notation;
+        this.rooms = rooms;
         this.parent = document.querySelector(parentSelector);
     }
     render() {
@@ -39,6 +40,7 @@ class ObjectInformation {
     getCityName (cityRegex, searchSelector) {
         const cityMatch = searchSelector.textContent.match(cityRegex);
         sessionStorage.setItem('city', cityMatch[1]);
+        sessionStorage.setItem('rooms', this.rooms);
         city = cityMatch[1];
         apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
     }
@@ -63,10 +65,10 @@ next.addEventListener('click', (e) => {
 export function infoOfObject (index) {
     getResource('http://localhost:3000/MyObject')
     .then(data => {
-        data.forEach(({city, street, houseNumber, typesOfWork, notation, parent}, i) => {
+        data.forEach(({city, street, houseNumber, typesOfWork, notation, rooms, parent}, i) => {
             if ((i + 1) === index) {  
-                new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).render();
-                new ObjectInformation(city, street, houseNumber, typesOfWork, notation, parent).getCityName(/City: (\w+)\./, renderCity);
+                new ObjectInformation(city, street, houseNumber, typesOfWork, notation, rooms, parent).render();
+                new ObjectInformation(city, street, houseNumber, typesOfWork, notation, rooms, parent).getCityName(/City: (\w+)\./, renderCity);
                 checkWeather(weatherCity, weatherOutsideTemperature, weatherOutsideHumidity, weatherWind, weatherIcon, apiUrl);
                 renderLocation.style.background = `url('/assets/part_${index}.jpg') no-repeat`;
                 console.log(data[0].typesOfWork[2]);                                

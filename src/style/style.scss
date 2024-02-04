@@ -25,40 +25,40 @@
     line-height: 1.2;
     letter-spacing: 0.025em;
     text-transform: uppercase;
-}
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    img {
-        width: 35%;
-        padding: 10px;
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        img {
+            width: 35%;
+            padding: 10px;
+        }
     }
-}
-.menu {    
-    ul{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);        
-        li {
-            cursor: pointer;        
+    .menu {    
+        ul{
             display: grid;
-            justify-content: center;
-            transition: all 0.3s ease 0s;
-            color: var(--color-text);
-            font-weight: 700;
-            &:hover {
-                color:rgb(134, 34, 34);
+            grid-template-columns: 10% repeat(3, 1fr);        
+            li {
+                cursor: pointer;        
+                display: grid;
+                justify-content: center;
+                transition: all 0.3s ease 0s;
+                color: var(--color-text);
                 font-weight: 700;
+                &:hover {
+                    color:rgb(134, 34, 34);
+                    font-weight: 700;
+                }
             }
         }
     }
-}
-.menu__userStatus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-        width: 20%;
+    .menu__userStatus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 20%;
+        }
     }
 }
 // Main
@@ -122,7 +122,7 @@
                     .main__weather {
                         position: relative;
                         grid-area: weather;
-                        background: url('/src/img/mainBackground/weather.png') no-repeat;
+                        background: url('/src/img/mainBackground/weather.jpg') no-repeat;
                         .weather__icon {
                             position: absolute;
                             top: -5%;

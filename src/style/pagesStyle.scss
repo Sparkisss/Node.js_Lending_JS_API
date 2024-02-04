@@ -1,3 +1,4 @@
+// main
 .main {
     .main__wrapper {
         .main__wrapper-inner {
@@ -167,11 +168,30 @@
                     .informPanel {
                         grid-area: informPanel;
                     }
+                    .informPanel {
+                        display: flex; 
+                        justify-content: center; 
+                        align-items: center;                                 
+                        ul {
+                            li {
+                                text-align: center;
+                                color:#FFF;
+                            }
+                        }
+                        
+                    }
             }
         }
     }
 }
 
+
+
+
+
+
+
+// trash
 .test {
     background: url('/src/img/down.png') no-repeat;
     background: url('/src/img/up.png') no-repeat;

@@ -6,7 +6,540 @@
       "houseNumber": 122,
       "typesOfWork": ["1. ASCAPC system", "2. Thermal point automation", "3. Elevation pumping station",  "4. Dispatching of metering devices"],
       "notation": "Construction of a r. b. on the str. Kirova 12 according to the master plan with infrastructure facilities",
-      "parent": ".main__slide"
+      "rooms": 64,
+      "parent": ".main__slide",
+      "apartmentReadings": [
+        {
+          "id": 1,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.20,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 2,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 6,
+          "instantaneousRateOfFlow": 0.26,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 3,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 26,
+          "instantaneousRateOfFlow": 0.00,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 4,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 11,
+          "instantaneousRateOfFlow": 1.23,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 5,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 13,
+          "instantaneousRateOfFlow": 4.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 6,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 19,
+          "instantaneousRateOfFlow": 0.72,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 7,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.21,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 8,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.24,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 9,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.29,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 10,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.62,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 11,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 1.20,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 12,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 13,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 14,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 15,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 16,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 17,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 18,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 19,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 20,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 21,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 22,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 23,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 24,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 25,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 26,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 27,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 28,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 29,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 30,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 31,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 32,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 33,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 34,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 35,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 36,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 37,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 38,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 39,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 40,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 41,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 42,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 43,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 44,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 45,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 46,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 47,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 48,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 49,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 50,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 51,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 52,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 53,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 54,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 55,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 56,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 57,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 58,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 59,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 60,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 61,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 62,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 63,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 64,
+          "supplyMeter": "CE 208 BY",
+          "accumulatedExpense": 16,
+          "instantaneousRateOfFlow": 0.2,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        }
+      ],
+      "introductoryCounter": [
+        {
+          "id": 1,
+          "supplyMeter": "CE 318 BY R32",
+          "accumulatedExpense": 169,
+          "instantaneousRateOfFlow": 8.20,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        },
+        {
+          "id": 2,
+          "supplyMeter": "CE 318 BY R32",
+          "accumulatedExpense": 69,
+          "instantaneousRateOfFlow": 1.70,
+          "startDate": "04.02.2024",
+          "endDate": "04.02.2028"
+        }
+      ]
     },
     {
       "city": "Kobrin",
@@ -14,6 +547,7 @@
       "houseNumber": 54,
       "typesOfWork": "1. Thermal point automation, 2. Elevation pumping station",
       "notation": "Construction of a r. b. on the str. Druschba 4 according to the master plan.",
+      "rooms": 87,
       "parent": ".main__slide"
     },
     {
@@ -22,6 +556,7 @@
       "houseNumber": 91,
       "typesOfWork": "1. ASCAPC system, 2. Thermal point automation, 3. Elevation pumping station,  4. Dispatching of metering devices",
       "notation": "Construction of a r. b. on the str. Pritickogo 69 according to the master plan with infrastructure facilities.",
+      "rooms": 103,
       "parent": ".main__slide"
     },
     {
@@ -30,6 +565,7 @@
       "houseNumber": 6,
       "typesOfWork": "1. Thermal point automation",
       "notation": "Construction of a r. b. on the str. Kolosa 1 according to the master plan.",
+      "rooms": 44,
       "parent": ".main__slide"
     },
     {
@@ -38,44 +574,18 @@
       "houseNumber": 3,
       "typesOfWork": "1. Thermal point automation",
       "notation": "Construction of a r. b. on the str. Sikorskogo 10 according to the master plan.",
+      "rooms": 60,
       "parent": ".main__slide"
     }
   ],
-  "MyObject2023": [
+  "MyObjectASCAPC": [
     {
-      "city": "London",
-      "street": "Kirova",
-      "house": 122,
-      "descr": "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
-      "parent": ".main__slide"
-    },
-    {
-      "city": "London",
-      "street": "Druschba",
-      "house": 54,
-      "descr": "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
-      "parent": ".main__slide"
-    },
-    {
-      "city": "London",
-      "street": "Pritickogo",
-      "house": 91,
-      "descr": "It is text for test my try",
-      "parent": ".main__slide"
-    },
-    {
-      "city": "London",
-      "street": "Kolosa",
-      "house": 6,
-      "descr": "I hope I can make it's right",
-      "parent": ".main__slide"
-    },
-    {
-      "city": "London",
-      "street": "Sikorskogo",
-      "house": 3,
-      "descr": "It is very important for me and my future",
-      "parent": ".main__slide"
+      "id": 1,
+      "supplyMeter": "CE 208 BY",
+      "accumulatedExpense": 16,
+      "instantaneousRateOfFlow": 0.2,
+      "startDate": "04.02.2024",
+      "endDate": "04.02.2028"
     }
   ],
   "requests": [
